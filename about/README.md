@@ -22,11 +22,14 @@
 - 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue CLI 製作 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 後端渲染網站。
 
 ### 代表作品 WORKS
+- [Ray Chang Space](https://github.com/rayc2045/raychang-space)：透過 GSAP 達成視覺上 3D 的個人網站/作品集網站，在排版和體驗互動上精益求精，特屬嘔心瀝血之作
+- [Horizontal Scrolling Theater](https://github.com/rayc2045/horizontal-scrolling-theater)：自己製作電影 API 做串接，結合 Vue 3.0 與 GSAP 達成橫向捲動的電影頁面，最特別之處在新增、移除電影時的互動體驗
+- [Ghibli Crawler](https://github.com/rayc2045/ghibli-crawler)：由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照
+- [Ghibli Gallery](https://github.com/rayc2045/ghibli-gallery)：為吉卜力工作室作品相簿重新設計外觀並打造的網站，使用 Vue 開發而成的 SPA 架構使其擁有更流暢的使用體驗
+- [Draggable Todo](https://github.com/rayc2045/draggable-todoList)：歷經數十個版本的迭代開發、絕對好用的 Chrome Extension，除了別於一般 To-do List，擁有拖曳任務和 Markdown Link 轉譯的功能，甚至可以從中享受到《薩爾達：荒野之息》經典音效和讓你成就感滿滿的彩蛋特效
 
-
-### 留在最後
+### 留在最後 LAST WORDS
 感謝你讀到了這裡，網路可以說是 21 世紀最偉大的發明了，它成為了你我之間毫無阻礙的溝通橋樑，如果想再認識我多一點，或是與我聯繫，歡迎透過：
-- [個人網站](https://rayc.dev/) (展示我更多全貌的地方)
 - [GitHub](https://github.com/rayc2045) (我做過的專案/作品都放在這裡)
 - [Dribbble](https://dribbble.com/raychangdesign) (大部分放有我做專案的設計稿和截圖)
 - [Medium](https://raychangdesign.medium.com/) (我寫的文章都放在這裡，不管是與開發有關的，或是其他的主題)
