@@ -1,6 +1,8 @@
 # 關於我 ABOUT ME
 
-[[Read PDF]](https://rayc.dev/about/rayc_resume.pdf)
+[> 閱讀 PDF](https://rayc.dev/about/rayc_resume.pdf)
+
+<br>
 
 <img src="https://avatars.githubusercontent.com/u/39514595?s=260"></img>
 
