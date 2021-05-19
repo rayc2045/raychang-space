@@ -1,6 +1,6 @@
 # 關於我 ABOUT ME
 
-[> 閱讀 PDF](https://rayc.dev/about/rayc_resume.pdf)
+[> 閱讀 PDF](https://rayc.dev/about/rayc_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=150)
 
 <br>
 
