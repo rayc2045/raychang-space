@@ -60,6 +60,7 @@ a
     transform: translateY(0)
 
 .resume
+  position: relative
   margin: 0 auto
   +resumeSize(73vw)
   box-shadow: $resumeShadow
@@ -72,6 +73,11 @@ a
     margin: 0
     +resumeSize(100vw)
     box-shadow: none
+
+embed
+  position: fixed
+  left: -1%
+  top: -1%
 
 .tip
   margin-top: 2rem
