@@ -1,7 +1,7 @@
 # Ray Chang Space
 ## 2.5D Portfolio Website with Smooth-scrolling
 
-[![Photo](https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/demo/01.png)](https://dribbble.com/raychangdesign)
+[![Photo](https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/demo/01.png)](https://rayc.dev)
 
 ### 簡介
 我始終認為，設計與開發是一體兩面，設計本是為開發而存在，開發也是為了完成設計，兩者相輔相成、互相影響。因此在網站的主頁中，我使用建築圖與對設計和開發的解釋，來表現自己在前端學習上，執著於同時兼顧清晰的設計與流暢的開發；網站設計上，我以報紙風格做為基礎，加入噪點以實現擬真的閱讀體驗，並刻意封鎖毫不必要的使用者事件（如文字選取、圖片拖移、右鍵點擊），也更換易於操作的鼠標圖案、加入元素的鼠標反向移動、滾動視差、鼠標觸碰作品圖的漸變效果，以及連絡表單輸入錯誤的微互動。
