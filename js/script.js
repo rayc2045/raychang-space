@@ -6,21 +6,21 @@ const worksData = [
     subtitle: 'Enjoy the online movie shopping',
     cover: '../img/webp/horizontal_scrolling_theater.webp',
     // video: '../video/webm/horizontal_scrolling_theater.webm',
-    info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
+    info: 'https://github.com/rayc2045/horizontal-scrolling-theater/blob/master/README.md#horizontal-scrolling-theater-with-vuejs',
     link: 'https://vuejs-theater.netlify.app/',
   },
   {
     title: 'Ghibli Crawler',
     subtitle: 'Automatically download 1,178 studio Ghibli\'s work photos',
     cover: '../img/webp/puppeteer_logo_transparent.webp',
-    info: 'https://github.com/rayc2045/ghibli-crawler',
-    link: 'https://github.com/rayc2045/ghibli-crawler',
+    info: 'https://github.com/rayc2045/ghibli-crawler/blob/main/README.md#ghibli-crawler',
+    link: 'https://github.com/rayc2045/ghibli-crawler/blob/main/README.md#ghibli-crawler',
   },
   {
     title: 'Ghibli Gallery',
     subtitle: 'Remaster studio Ghibli\'s work album with Vue 3.0',
     cover: '../img/webp/ghibli_gallery_app.webp',
-    info: 'https://github.com/rayc2045/ghibli-gallery',
+    info: 'https://github.com/rayc2045/ghibli-gallery/blob/main/README.md#ghibli-gallery---%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%82%B8%E3%83%96%E3%83%AA%E4%BD%9C%E5%93%81%E3%81%AE%E5%A0%B4%E9%9D%A2%E5%86%99%E7%9C%9F',
     link: 'https://rayc2045.github.io/ghibli-gallery/',
   },
   {
@@ -28,7 +28,7 @@ const worksData = [
     subtitle: 'How many levels can you accomplish?',
     cover: '../img/webp/block_memory_game.webp',
     // video: '../video/webm/block_memory_game.webm',
-    info: 'https://github.com/rayc2045/block-memory-game',
+    info: 'https://github.com/rayc2045/block-memory-game/blob/main/README.md#block-memory-game',
     link: 'https://rayc2045.github.io/block-memory-game/',
   },
   {
@@ -36,7 +36,7 @@ const worksData = [
     subtitle: 'Elegantly shows the result immediately',
     cover: '../img/webp/vanilla_calculator.webp',
     // video: '../video/webm/vanilla_calculator.webm',
-    info: 'https://github.com/rayc2045/vanilla-calculator',
+    info: 'https://github.com/rayc2045/vanilla-calculator/blob/master/README.md#vanilla-calculator',
     link: 'https://rayc2045.github.io/vanilla-calculator/',
   },
   {
@@ -44,7 +44,7 @@ const worksData = [
     subtitle: 'Featured by autosave and markdown support',
     cover: '../img/webp/draggable_todo_list.webp',
     // video: '../video/webm/draggable_todo_list.webm',
-    info: 'https://github.com/rayc2045/draggable-todoList',
+    info: 'https://github.com/rayc2045/draggable-todoList/blob/master/README.md#draggable-to-do-list',
     link: 'https://rayc2045.github.io/draggable-todoList/',
   },
   // {
