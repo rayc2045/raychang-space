@@ -63,6 +63,7 @@
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -77,6 +78,7 @@
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-500.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -91,6 +93,7 @@
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-700.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('../font/noto-sans-tc-v11-latin_chinese-traditional/noto-sans-tc-v11-latin_chinese-traditional-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
