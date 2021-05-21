@@ -15,7 +15,8 @@
 - 封鎖任何破壞瀏覽體驗的使用者操作事件，如文字選取、圖片拖移和右鍵點擊，並加入點擊頁面時的互動效果作為補償
 - 將長度為 2:54 的音樂 [Touch - Svyat Illin](https://icons8.com/music/search/touch) 剪輯為 31 秒在背景無限循環播放；另外在點擊連結、填寫連絡表單時分別加入翻頁和打字音效，讓網站變得有聲有色
 - 加入表單驗證功能，並在驗證結果為不通過時加入提示動畫，減少輸入錯誤的挫折感，並設計讓 Textarea 達到能隨著文字量做擴展或內縮的自適應；以及在表單提交、捲動頁面離開感謝視窗後，自動換回連絡表單的復原設計
-- About 頁面中使用自製右鍵選單，解決導覽列 (Navbar) 佔版面、鼠標移動距離較長的問題 (費茲定律)，達到更簡潔的視覺版面與更加順暢的使用體驗
+- About 頁面中使用自製右鍵選單，解決導覽列 (Navbar) 佔版面、鼠標移動距離較長 (費茲定律) 的問題，達到更簡潔的視覺版面與更加順暢的使用體驗
+- [履歷](https://rayc.dev/about/resume/rayc_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=125) 設計上，以三欄式佈局加上全大寫英文標題呈現方正、整齊的風格，並使用帶有紋路的象牙紙為底，搭配深灰而非純黑字提升質感
 - 使用 [Kit8 付費插畫](https://kit8.net/illustrations/web-online-page-with-404-not-found-error/) 後製陰影並搭配 [Nunito 字體](https://fonts.google.com/specimen/Nunito?preview.text_type=custom) 和噪點背景，客製化重定向 [404 Not Found 頁面](https://rayc.dev/whatever)
 - 使用自訂網域名稱 [rayc.dev](https://rayc.dev)
 
