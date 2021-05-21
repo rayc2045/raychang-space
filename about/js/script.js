@@ -20,7 +20,7 @@ window.onresize = () => {
 };
 
 window.onload = () => {
-  if (!isTouchDevice && !isFirefox) smoothScroll();
+  if (!isTouchDevice) smoothScroll();
   endLoading(); // + enableScroll()
   
   document.oncontextmenu = e => {

@@ -139,7 +139,7 @@ class Portfolio {
       });
 
       this.parallax();
-      if (!this.isFirefox) this.smoothScroll();
+      this.smoothScroll();
     }
 
     this.containerEl.onmousedown = e => this.appendCircle(e, this.containerEl);
