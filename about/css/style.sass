@@ -49,6 +49,39 @@ a
   &:hover
     text-decoration: underline $blue
 
+@keyframes slideUp
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-100vh)
+    // display: none // display property can't be animated
+
+@keyframes slideDown
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(18vh)
+
+.loading
+  width: 100%
+  height: 100%
+  position: fixed
+  left: 0
+  top: 0
+  display: grid
+  place-items: center
+  z-index: 9999
+  overflow: hidden
+  background-color: $black
+  &.animated
+    animation: slideUp 1.5s ease-in-out forwards // Stop at the final frame
+    .loading-animation
+      animation: slideDown 1.5s
+
+.loading-animation
+  width: 50%
+  pointer-events: none
+
 .SmoothScroll
   position: fixed
   left: 50%

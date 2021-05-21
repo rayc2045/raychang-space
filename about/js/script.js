@@ -4,6 +4,7 @@ const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
+const loadingEl = document.querySelector('.loading');
 const menuEl = document.querySelector('.menu');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3')
 
@@ -20,7 +21,7 @@ window.onresize = () => {
 
 window.onload = () => {
   if (!isTouchDevice && !isFirefox) smoothScroll();
-  enableScroll();
+  endLoading(0.5);
   
   document.oncontextmenu = e => {
     if (e.target.hasAttribute('href')) return false;
@@ -40,6 +41,10 @@ document.onmouseup = e => {
   }
 };
 
+function removeElement(el) {
+  el.parentNode.removeChild(el);
+}
+
 function disableScroll() {
   document.body.style.overflow = 'hidden';
 }
@@ -56,6 +61,17 @@ function smoothScroll() {
     scrollEase: 0.08,
     maxOffset: 500,
   });
+}
+
+function endLoading(delay = 0) {
+  setTimeout(() => {
+    loadingEl.classList.add('animated');
+  }, delay * 1000);
+
+  setTimeout(() => {
+    removeElement(loadingEl);
+    enableScroll();
+  }, delay * 1000 + 1500);
 }
 
 function initWindowSize() {
