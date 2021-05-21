@@ -21,7 +21,7 @@ window.onresize = () => {
 
 window.onload = () => {
   if (!isTouchDevice && !isFirefox) smoothScroll();
-  endLoading(0.5);
+  endLoading(); // + enableScroll()
   
   document.oncontextmenu = e => {
     if (e.target.hasAttribute('href')) return false;
