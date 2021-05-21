@@ -81,6 +81,8 @@ a
 .loading-animation
   width: 50%
   pointer-events: none
+  @media screen and (orientation: portrait) and (max-width: 767px) // portrait and < 768px
+    width: 75%
 
 .SmoothScroll
   position: fixed
