@@ -6,7 +6,7 @@ let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 const loadingEl = document.querySelector('.loading');
 const menuEl = document.querySelector('.menu');
-const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3')
+const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
@@ -21,7 +21,7 @@ window.onresize = () => {
 
 window.onload = () => {
   if (!isTouchDevice) smoothScroll();
-  endLoading(); // + enableScroll()
+  endLoading(); // includes function enableScroll
   
   document.oncontextmenu = e => {
     if (e.target.hasAttribute('href')) return false;
@@ -82,6 +82,7 @@ function initWindowSize() {
 function showMenu(e) {
   e.preventDefault();
   menuEl.classList.remove('hide');
+
   const menuWidth = menuEl.getBoundingClientRect().width;
   const menuHeight = menuEl.getBoundingClientRect().height;
   const offset = 5;
