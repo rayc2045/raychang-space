@@ -19,8 +19,9 @@
 - 具備專業級別的圖像處理能力，修圖、去背、調色、降解以讓圖片在網頁中有更快的載入速度，甚至使用 Machine Learning 提高圖像解析度都不是問題。
 - 具備 UI/UX 設計概念，親手設計與實作個人網站、手刻 [精美計算機](https://rayc2045.github.io/vanilla-calculator/)。
 - 開發上做到 Pixel perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式排版](https://rayc.dev)。
-- 善用 CSS 預處理器 Sass，以及懂得使用框架如 Bootstrap 和 Tailwind 加速介面開發。
+- 善用 CSS 預處理器 Sass，以及懂得使用 Bootstrap 和 Tailwind 加速介面開發。
 - 熟悉 Vanilla JavaScript，能夠撰寫清楚明瞭、容易維護的程式碼。
+- 懂得 API 串接與 Git 版本控制。
 - 懂得網站優化技術，例如在個人網站中，使用 WebP/WebM 格式呈現網站資源，搭配 Lazy loading 延遲載入，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
 - 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 伺服器端渲染網站。
 
