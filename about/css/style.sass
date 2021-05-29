@@ -153,6 +153,7 @@ a
   background-color: $white
   border-radius: 12px
   box-shadow: $menuShadow
+  overflow: hidden
   li
     transition: background-color 0.1s
     &:hover
@@ -161,9 +162,15 @@ a
     padding: 0.65rem 1rem
     display: block
     color: $black
-    @media screen and (max-width: 1280px) // < 1281
-      padding: 10.4px 16px
-      font-size: 16px
+    @media screen and (max-width: 1920px)
+      padding: 13px 20px
+      font-size: 20px
+    @media screen and (max-width: 1280px)
+      padding: 11.7px 18px
+      font-size: 18px
+    @media screen and (max-width: 568px)
+      padding: 9.1px 14px
+      font-size: 14px
     &:hover
       text-decoration: none
 
