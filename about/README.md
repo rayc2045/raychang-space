@@ -22,7 +22,7 @@
 - 善用 CSS 預處理器 Sass，以及懂得使用 Bootstrap 和 Tailwind 加速介面開發。
 - 熟悉 Vanilla JavaScript，能夠撰寫清楚明瞭、容易維護的程式碼。
 - 懂得 API 串接與 Git 版本控制。
-- 懂得網站優化技術，例如在個人網站中，使用 WebP/WebM 格式呈現網站資源，搭配 Lazy loading 延遲載入，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
+- 懂得網站優化，例如在個人網站中使用 WebP/WebM 格式呈現網站資源，並搭配 Lazy loading 延遲載入等技術，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
 - 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 伺服器端渲染網站。
 
 ### 代表作品 WORKS
