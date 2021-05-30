@@ -21,7 +21,8 @@
 - 使用自訂網域名稱 [rayc.dev](https://rayc.dev)
 
 ### 開發紀錄
-- 使用預處理器 Sass 模組化管理與開發 CSS、使用 JavaScript `class` 物件導向式開發
+- 使用預處理器 Sass 模組化開發與管理 CSS
+- 使用 `class` 物件導向式開發 JavaScript
 - 網頁元素以 `rem` 做單位，達成在任何尺寸的設備上，顯示一致的絕佳比例<!-- - 使用 CSS `@media` 和 `transform` 讓使用者設備為手機時，自動旋轉 90 度以提供最佳瀏覽體驗 -->
 - 使用 `@font-face` + `font-display: swap` 方式加載自託管 (self-hosted) 字體，減少網頁請求數、加快字體載入速度
 - 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，檔案大小減少 82%！並使用 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/) 延遲載入技術，網頁載入效率提升 2.85 倍
