@@ -1,3 +1,14 @@
+::-webkit-scrollbar
+  // width: 0.8vw
+  width: 0
+// ::-webkit-scrollbar-track // Track
+//   background-color: transparent
+// ::-webkit-scrollbar-thumb // Handle
+//   background-color: $black
+
+::selection
+  background-color: $lightGrey
+
 html
   font-family: 'Noto Sans TC', sans-serif
   font-size: 1vw
@@ -14,7 +25,8 @@ body
     padding-bottom: 2rem
 
 img
-  width: 100%
+  +size(100%, auto)
+  pointer-events: none
 
 a
   color: $blue
@@ -22,3 +34,6 @@ a
   cursor: url('../../img/webp/hover.webp'), url('../../img/original/hover.png'), pointer
   &:hover
     text-decoration: underline $blue
+
+.hide
+  display: none
