@@ -1,0 +1,61 @@
+.SmoothScroll
+  position: fixed
+  left: 50%
+  transform: translateX(-50%)
+
+.container
+  width: 100vw
+  display: grid
+  place-items: center
+  background-image: $noise
+
+.content
+  padding: 1.9rem 0 
+  width: 75vw
+  font-size: 1.25rem
+  letter-spacing: 0.01rem
+  line-height: 1.5
+  @media screen and (max-width: 1920px)
+    padding: 36px 0
+    font-size: 24px
+    letter-spacing: 0.1px
+  @media screen and (max-width: 568px)
+    padding: 16px 0
+    font-size: 16px
+    width: 84vw
+  h1
+    margin: 1.25rem 0
+    @media screen and (max-width: 1920px)
+      margin: 24px 0
+  img
+    width: 20.3rem
+    @media screen and (max-width: 1920px)
+      width: 390px
+    @media screen and (max-width: 568px)
+      width: 260px
+    @media screen and (max-width: 400px)
+      // width: 97%
+      display: block
+      margin: 0 auto
+  p, ul // for margin top
+    margin-top: 0
+  h3, p, ul // for margin bottom
+    margin-bottom: 0.83rem
+    @media screen and (max-width: 1920px)
+      margin-bottom: 16px
+  h3
+    margin-top: 1.25rem
+    font-size: 1.25em
+    @media screen and (max-width: 1920px)
+      margin-top: 24px
+  p
+    text-align: justify
+  li
+    margin-left: 0.5rem
+    @media screen and (max-width: 1920px)
+      margin-left: 9px
+    @media screen and (max-width: 568px)
+      margin-left: -10px
+
+.hide
+  display: none

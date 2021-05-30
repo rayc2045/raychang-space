@@ -1,0 +1,24 @@
+html
+  font-family: 'Noto Sans TC', sans-serif
+  font-size: 1vw
+  user-select: none
+  scrollbar-width: none
+
+body
+  color: $black
+  background-color: $white
+  cursor: url('../../img/webp/arrow.webp'), url('../../img/original/arrow.png'), auto
+  position: relative
+  @media screen and (max-width: 1024px) // <= 1024
+    padding: 0
+    padding-bottom: 2rem
+
+img
+  width: 100%
+
+a
+  color: $blue
+  text-decoration: none
+  cursor: url('../../img/webp/hover.webp'), url('../../img/original/hover.png'), pointer
+  &:hover
+    text-decoration: underline $blue
