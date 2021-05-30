@@ -1,0 +1,412 @@
+.container
+  padding: 3.18rem 5.6rem
+  background-image: $noise
+
+nav
+  padding: 1rem 0
+  +flexLeft
+  section
+    +flexLeft
+    .line
+      margin-left: 1.04rem
+      margin-top: 0.1rem
+      width: 11rem
+      border-bottom: 0.1rem solid $black
+  .about, .contact
+    z-index: 999
+  .about
+    margin-left: auto
+    margin-right: 2.49rem
+
+main
+  border-bottom: 0.1rem solid $mediumGrey
+  margin-bottom: $gapSize - $mainElOffset
+  height: 47.5rem + $mainElOffset
+  position: relative
+  top: - $mainElOffset - 0.3rem
+  overflow: hidden
+  [class^="circle"]
+    position: absolute
+    border-radius: 50%
+    background-image: $noiseIntense
+  .circle-yellow
+    left: 14.3rem
+    top: 17.2rem + $mainElOffset
+    +size(16.73rem)
+    background-color: $yellow
+  .circle-red
+    left: 38.6rem
+    top: -1.5rem + $mainElOffset
+    +size(20.9rem)
+    background-color: $orange
+  .building
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -0.3rem
+    +size(57.5rem, auto)
+  article
+    position: absolute
+    top: 20.5rem + $mainElOffset
+    width: 19.16rem
+    &.article-left
+      left: 0
+    &.article-right
+      right: 0
+    p
+      font-size: 0.94rem
+      font-weight: 700
+      line-height: 1.54
+    h1
+      margin-top: 0.26rem
+      margin-bottom: 0.95rem
+      font-size: 2.35rem
+      font-weight: 700
+      letter-spacing: 0.15rem
+    picture
+      width: 100%
+      top: 50%
+      source, img
+        display: none
+        mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
+  .avatar
+    display: none
+  .name
+    position: absolute
+    left: 3.8rem
+    top: 3.3rem + $mainElOffset
+    font-family: 'Playfair Display', serif
+    font-size: 8.3rem
+    font-weight: 900
+    letter-spacing: 0
+  .description
+    display: none
+
+.design-guide
+  position: fixed
+  width: 85.5rem
+  transform: translate(-5.5rem, -62.4rem)
+  opacity: 0.3
+
+.works
+  margin-bottom: $gapSize / 2
+  border-bottom: 0.1rem solid $mediumGrey
+  &.hover-interaction
+    .work a
+      filter: grayscale(100%)
+      background-color: $lightGrey
+      &:hover
+        filter: grayscale(0%)
+        background-color: $lightGrey2
+  .work
+    margin-bottom: $gapSize
+    list-style: none
+    display: flex
+    &:nth-of-type(2n)
+      flex-direction: row-reverse
+      section
+        margin-left: 0
+        margin-right: auto
+        .number
+          margin-left: 0
+          margin-right: 10rem
+    a
+      width: 60%
+      height: 33.499rem
+      color: transparent
+      background-color: $lightGrey
+      // background-image: $noise
+      filter: grayscale(100%)
+      overflow: hidden
+      cursor: url('../img/original/arrow.svg') 50 50, pointer
+      transition: filter 0.75s, background-color 0.75s
+    &.color a
+      background-color: $lightGrey2
+      filter: grayscale(0%)
+    &.grayscale a
+      background-color: $lightGrey
+      filter: grayscale(100%)
+    section
+      margin-left: auto
+      margin-top: 3.04rem
+      width: 27.4rem
+      .number
+        margin-left: 10rem
+        margin-bottom: -1.58rem
+        +flexCenter
+        font-size: 13.5rem
+        font-weight: normal
+        color: $lightGrey
+      .title
+        margin-bottom: 0.58rem
+        font-size: 1.62rem
+      .subtitle, .info
+        font-size: 1.12rem
+        color: $mediumGrey
+      .info
+        background-color: transparent
+        cursor: url('../img/webp/hover.webp'), url('../img/original/hover.png'), pointer
+        &:hover
+          background-color: transparent
+
+#contact
+  margin-bottom: $gapSize / 1.5
+  padding-top: $gapSize / 2
+  display: flex
+  justify-content: center
+  picture
+    width: 40%
+    margin-top: 4.8rem
+  section
+    margin-left: 7.5rem
+    width: 42.5%
+
+.say-hello
+  .title
+    font-size: 4.5rem
+    font-weight: 400
+  .note
+    margin: 1.6rem 0
+    display: flex
+    flex-direction: row
+    p
+      margin-left: 0.3rem
+      font-size: 1.1rem
+      font-weight: 300
+      color: $mediumGrey
+  .star
+    color: $darkYellow
+    font-size: 1.1rem
+  form
+    font-size: 1.22rem
+    font-weight: 400
+    letter-spacing: normal
+    label
+      margin-bottom: 2.3rem
+      list-style: none
+      +flexLeft
+      border-bottom: 0.1rem solid $mediumGrey
+      &:nth-of-type(5)
+        margin-bottom: 0
+        border: none
+      &:nth-of-type(6)
+        margin-bottom: 0
+      input, textarea
+        padding: 0.55rem 0
+        font-size: 1.2rem
+        color: $mediumGrey
+        width: 100%
+        word-break: break-all // input 為單行元件
+      input
+        margin-left: 0.55rem
+      textarea
+        line-height: 1.45
+      &.alert
+        animation: shakeHorizontal 0.5s ease forwards
+    .send
+      margin-top: 2.3rem
+      margin-left: auto
+      margin-right: 0.5rem
+      display: block
+      text-decoration: underline
+      font-size: inherit
+
+.appreciation
+  margin-left: 3rem
+  +flexCenter
+  flex-direction: column
+  +size(36.2rem, 42rem)
+  h1
+    margin-bottom: 1rem
+    font-size: 2.2rem
+    font-weight: 400
+  h3
+    font-size: 1.35rem
+    font-weight: 400
+
+footer
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  width: 12.7rem
+  white-space: nowrap
+  font-size: 1.1rem
+  text-align: center
+  .to-top
+    margin: 0 auto
+    display: none
+    width: 8.01rem
+  &.hover-interaction
+    p
+      display: block
+    .to-top
+      font-size: 1.1rem
+      display: none
+    &:hover
+      p
+        display: none
+      .to-top
+        display: block
+
+.copyright
+  position: absolute
+  left: 2rem
+  bottom: 1.3rem
+  font-family: sans-serif
+  font-weight: normal
+  font-size: 0.8rem
+  letter-spacing: 0
+  color: $mediumGrey
+  pointer-events: none
+
+.hide
+  display: none
+
+// Design, Programming .article screenshot setting
+// @media screen and (max-width: 1280px) // size ≤ 1280px
+//   body
+//     background-color: white
+//     background-image: none
+//   [class^="circle"]
+//     display: none
+//   article
+//       border: 0.05rem solid grey
+
+// Design, Programming .article RWD
+@media screen and (max-width: 1279px) // ≤ 1279px
+  main
+    article
+      p, h1
+        display: none
+      picture
+        source, img
+          display: block
+
+@media screen and (max-width: 767px) // <= 768
+  nav
+    .date
+      font-size: 1.3rem
+  main
+    top: - $mainElOffset - 0.5rem
+
+@media screen and (max-width: 735px) // <= 735
+  html
+    font-size: 3.5vw
+    letter-spacing: 0.02rem
+
+  .loading .loading-animation
+    width: 75%
+
+  nav, .line, .contact, .about, main [class^="circle"], .building, .name span, main article, .works .work section .number, #contact picture, footer
+    display: none
+
+  .container
+    padding: 1.5rem 1.6rem
+
+  main
+    position: static
+    height: auto
+    +flexVerticalCenter
+    .avatar
+      display: block
+      width: 75%
+    .name
+      margin-top: 0.25rem
+      margin-bottom: 0.7rem
+      position: static
+      font-size: 3.2rem
+    .description
+      display: block
+      margin-bottom: 2rem
+      text-align: center
+      font-size: 1.25rem
+      color: $mediumGrey
+      p, a
+        display: inline
+      a
+        color: $mediumGrey
+        font-size: 1.25rem
+
+  .design-guide
+    width: 135rem
+    transform: translate(-30rem, -96.7rem)
+  
+  .works
+    margin-bottom: $gapSize / 2.5
+    .work, .work:nth-of-type(2n)
+      margin-bottom: $gapSize / 2.5
+      height: auto
+      flex-direction: column
+      a
+        width: 100%
+        height: calc((100vw - 3.2rem) / 4 * 3)
+      section
+        margin: 0
+        width: 100%
+        .title, .subtitle
+          padding-left: 0.3rem
+        .title
+          margin-top: 0.7rem
+          margin-bottom: 0.25rem
+          letter-spacing: 0
+        .subtitle, .subtitle .info
+        .subtitle
+          margin-top: 0.2rem
+
+  #contact
+    margin-bottom: $gapSize / 5
+    padding: 0
+    flex-direction: column
+    align-items: center
+    .say-hello
+      margin-left: 0
+      width: 95%
+      .title
+        font-size: 2.8rem
+      .note
+        margin-top: 1rem
+    .appreciation
+      margin: 0
+      margin-top: 2.5rem
+      +size(auto, auto)
+
+  .copyright
+    margin-top: $gapSize / 2.5
+    position: relative
+    left: 0
+    top: 0
+    font-size: 0.9rem
+    text-align: center
+
+  // Rotate document.html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
+  // html
+  //   font-size: 1.168vh
+  // body
+  //   background-image: none
+  // .viewport
+  //   // transform: rotate(-90deg)
+  //   transform: rotate(90deg)
+  //   transform-origin: left top
+  //   width: 91.45vh // (width: 100vh) Reset for address bar
+  //   height: 100vw
+  //   position: absolute
+  //   // left: 0
+  //   // top: 100%
+  //   left: 100%
+  //   top: 0
+  //   overflow-x: hidden
+  //   background-image: $noise
+  //   padding: 3rem 3rem // (padding: 3.18rem 5.6rem) Reset padding for address bar
+  //   padding-left: 2rem // left 1 proportion
+  //   padding-right: 4em // right 2 proportion
+  // main
+  //   height: 46.5rem
+  // .works .work section // fontSize * 1.05
+  //   .number
+  //     font-size: 14.175rem
+  //   .title
+  //     font-size: 1.701rem
+  //   .subtitle, .info
+  //     font-size: 1.176rem
+  // footer // fontSize * 1.05
+  //   font-size: 1.155rem

@@ -1,0 +1,29 @@
+@keyframes slideUp
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-100vh)
+    // display: none // display property can't be animated
+
+@keyframes slideDown
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(18vh)
+
+@keyframes shakeHorizontal
+  0%
+    transform: translateX(7.5%)
+  25%
+    transform: translateX(-5%)
+  50%
+    transform: translateX(2.5%)
+  100%
+    transform: translateX(0)
+
+@keyframes expanding
+  0%
+    transform: scale(0.01)
+    background-color: rgba($black, 0.03)
+  100%
+    transform: scale(1)
