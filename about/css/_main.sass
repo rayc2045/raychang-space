@@ -15,23 +15,23 @@
   font-size: 1.25rem
   letter-spacing: 0.01rem
   line-height: 1.5
-  @media screen and (max-width: 1920px)
+  +desktop
     padding: 36px 0
     font-size: 24px
     letter-spacing: 0.1px
-  @media screen and (max-width: 568px)
+  +mobile
     padding: 16px 0
     font-size: 16px
     width: 84vw
   h1
     margin: 1.25rem 0
-    @media screen and (max-width: 1920px)
+    +desktop
       margin: 24px 0
   img
     width: 20.3rem
-    @media screen and (max-width: 1920px)
+    +desktop
       width: 390px
-    @media screen and (max-width: 568px)
+    +mobile
       width: 260px
     @media screen and (max-width: 400px)
       // width: 97%
@@ -41,18 +41,18 @@
     margin-top: 0
   h3, p, ul // for margin bottom
     margin-bottom: 0.83rem
-    @media screen and (max-width: 1920px)
+    +desktop
       margin-bottom: 16px
   h3
     margin-top: 1.25rem
     font-size: 1.25em
-    @media screen and (max-width: 1920px)
+    +desktop
       margin-top: 24px
   p
     text-align: justify
   li
     margin-left: 0.5rem
-    @media screen and (max-width: 1920px)
+    +desktop
       margin-left: 9px
-    @media screen and (max-width: 568px)
+    +mobile
       margin-left: -10px

@@ -30,3 +30,15 @@
 @mixin resumeSize($w, $h: $w / 21 * 29.7)
   width: $w
   height: $h
+
+@mixin desktop
+  @media screen and (max-width: 1920px)
+    @content
+
+@mixin iPad
+  @media screen and (max-width: 768px)
+    @content
+
+@mixin mobile
+  @media screen and (max-width: 568px)
+    @content
