@@ -5,6 +5,7 @@ const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 const loadingEl = document.querySelector('.loading');
+const containerEl = document.querySelector('.container');
 const menuEl = document.querySelector('.menu');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 
@@ -12,6 +13,7 @@ document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 disableScroll();
+if (!isTouchDevice) smoothScroll();
 window.onscroll = () => hideEl(menuEl);
 
 window.onresize = () => {
@@ -20,8 +22,11 @@ window.onresize = () => {
 };
 
 window.onload = () => {
-  if (!isTouchDevice) smoothScroll();
-  endLoading(); // includes function enableScroll
+  endLoading(); // includes enableScroll()
+
+  containerEl.onmousedown = e => {
+    if (e.which === 1) appendCircle(e, containerEl);
+  };
   
   document.oncontextmenu = e => {
     if (e.target.hasAttribute('href')) return false;
@@ -77,6 +82,21 @@ function endLoading(delay = 0) {
 function initWindowSize() {
   windowWidth = window.innerWidth;
   windowHeight = window.innerHeight;
+}
+
+function appendCircle(e, element, duration = 1.5) {
+  const circle = document.createElement('div');
+  circle.classList.add('circle');
+
+  const circleOffset = 0.25 * document.body.getBoundingClientRect().width;
+  let customCursorOffset = -(0.004 * document.body.getBoundingClientRect().width);
+  if (isTouchDevice) customCursorOffset = 0;
+  circle.style.left = `${e.pageX - circleOffset - customCursorOffset}px`;
+  circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
+  circle.style.animationDuration = `${duration}s`;
+
+  element.appendChild(circle);
+  setTimeout(() => removeElement(circle), duration * 1000);
 }
 
 function showMenu(e) {
