@@ -21,8 +21,8 @@ window.onresize = () => {
   initWindowSize();
 };
 
-window.onload = () => {
-  endLoading(); // includes enableScroll()
+// window.onload = () => {
+  endLoading(1); // includes enableScroll()
 
   containerEl.onmousedown = e => {
     if (e.which === 1) appendCircle(e, containerEl);
@@ -32,7 +32,7 @@ window.onload = () => {
     if (e.target.hasAttribute('href')) return false;
     showMenu(e);
   };
-};
+// };
 
 document.onmousedown = e => {
   if (!e.target.hasAttribute('href')) hideEl(menuEl);
