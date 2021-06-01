@@ -2,9 +2,8 @@
 
 const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-let windowWidth = window.innerWidth;
-let windowHeight = window.innerHeight;
 const loadingEl = document.querySelector('.loading');
+const viewportEl = document.querySelector('.viewport');
 const containerEl = document.querySelector('.container');
 const menuEl = document.querySelector('.menu');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
@@ -18,11 +17,12 @@ window.onscroll = () => hideEl(menuEl);
 
 window.onresize = () => {
   hideEl(menuEl);
-  initWindowSize();
+  resizeBodyHeight();
 };
 
-// window.onload = () => {
-  endLoading(1); // includes enableScroll()
+window.onload = () => {
+  endLoading(); // includes enableScroll()
+  resizeBodyHeight();
 
   containerEl.onmousedown = e => {
     if (e.which === 1) appendCircle(e, containerEl);
@@ -32,7 +32,7 @@ window.onresize = () => {
     if (e.target.hasAttribute('href')) return false;
     showMenu(e);
   };
-// };
+};
 
 document.onmousedown = e => {
   if (!e.target.hasAttribute('href')) hideEl(menuEl);
@@ -79,9 +79,8 @@ function endLoading(delay = 0) {
   }, delay * 1000 + 1500);
 }
 
-function initWindowSize() {
-  windowWidth = window.innerWidth;
-  windowHeight = window.innerHeight;
+function resizeBodyHeight() {
+  document.body.style.height = viewportEl.scrollHeight + 'px';
 }
 
 function appendCircle(e, element, duration = 1.5) {
@@ -103,6 +102,8 @@ function showMenu(e) {
   e.preventDefault();
   menuEl.classList.remove('hide');
 
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
   const menuWidth = menuEl.getBoundingClientRect().width;
   const menuHeight = menuEl.getBoundingClientRect().height;
   const offset = 5;
