@@ -113,7 +113,7 @@ class Portfolio {
   }
 
   events() {
-    this.preventScroll();
+    this.disableScroll();
     this.updateDate();
 
     setTimeout(
@@ -247,7 +247,7 @@ class Portfolio {
     el.parentNode.removeChild(el);
   }
 
-  preventScroll() {
+  disableScroll() {
     document.body.style.overflow = 'hidden';
   }
 
