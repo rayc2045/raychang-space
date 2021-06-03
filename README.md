@@ -22,10 +22,11 @@
 
 ### 開發紀錄
 - 使用預處理器 Sass 模組化開發與管理 CSS
-- 使用 `class` 物件導向式開發 JavaScript
+- 使用 JavaScript `class` 物件導向式開發網站功能
 - 網頁元素以 `rem` 做單位，達成在任何尺寸的設備上，顯示一致的絕佳比例<!-- - 使用 CSS `@media` 和 `transform` 讓使用者設備為手機時，自動旋轉 90 度以提供最佳瀏覽體驗 -->
 - 使用 `@font-face` + `font-display: swap` 方式加載自託管 (self-hosted) 字體，減少網頁請求數、加快字體載入速度
 - 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，檔案大小減少 82%！並使用 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/) 延遲載入技術，網頁載入效率提升 2.85 倍
+- 透過切換 Body 的 CSS 屬性 `overflow: hidden`，簡單達成網頁載入完成前的封鎖捲動
 - 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 達成滾動視差，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
 - 使用雙層 `setTimeout` 定時器配上秒數校準，達成精準的整點 (00:00:00) 日期更新
 - 為展示的作品封面加上鼠標碰觸 (CSS Hover) 和捲動頁面 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) 時的灰階上色互動效果，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
