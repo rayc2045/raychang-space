@@ -24,8 +24,10 @@ main
   margin-bottom: $gapSize - $mainElOffset
   height: 47.5rem + $mainElOffset
   position: relative
-  top: - $mainElOffset - 0.3rem
+  top: - $mainElOffset - 0.5rem
   overflow: hidden
+  +iPad
+    top: - $mainElOffset - 0.5rem
   [class^="circle"]
     position: absolute
     border-radius: 50%
@@ -263,34 +265,15 @@ footer
 .hide
   display: none
 
-// Design, Programming .article screenshot setting
-// @media screen and (max-width: 1280px) // size ≤ 1280px
-//   body
-//     background-color: white
-//     background-image: none
-//   [class^="circle"]
-//     display: none
-//   article
-//       border: 0.05rem solid grey
++MacBook13
+  main > article
+    p, h1
+      display: none
+    picture
+      source, img
+        display: block
 
-// Design, Programming .article RWD
-@media screen and (max-width: 1279px) // ≤ 1279px
-  main
-    article
-      p, h1
-        display: none
-      picture
-        source, img
-          display: block
-
-@media screen and (max-width: 767px) // <= 768
-  nav
-    .date
-      font-size: 1.3rem
-  main
-    top: - $mainElOffset - 0.5rem
-
-@media screen and (max-width: 735px) // <= 735
++mobile
   html
     font-size: 3.5vw
     letter-spacing: 0.02rem
@@ -317,7 +300,7 @@ footer
       display: block
       margin-bottom: 2rem
       text-align: center
-      font-size: 1.25rem
+      font-size: 1.3rem
       color: $mediumGrey
       p, a
         display: inline
@@ -336,16 +319,18 @@ footer
       height: auto
       flex-direction: column
       a
-        width: 100%
-        height: calc((100vw - 3.2rem) / 4 * 3)
+        +size43(25.4rem)
       section
         margin: 0
         padding-left: 0.3rem
         width: 100%
         .title
-          margin-top: 1.3rem
+          margin-top: 1.4rem
           margin-bottom: 0.5rem
+          font-size: 1.7rem
           letter-spacing: 0
+        .subtitle, .info
+          font-size: 1.2rem
 
   #contact
     margin-bottom: $gapSize / 5
