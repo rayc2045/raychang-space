@@ -13,25 +13,26 @@ document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 disableScroll();
 if (!isTouchDevice) smoothScroll();
+
 window.onscroll = () => hideEl(menuEl);
+
+window.onload = () => {
+  resizeBodyHeight();
+  // endLoading().then(() => enableScroll()); // Font "Noto Sans TC" is too big
+};
 
 window.onresize = () => {
   hideEl(menuEl);
   resizeBodyHeight();
 };
 
-window.onload = () => {
-  endLoading(); // includes enableScroll()
-  resizeBodyHeight();
+containerEl.onmousedown = e => {
+  if (e.which === 1) appendCircle(e, containerEl);
+};
 
-  containerEl.onmousedown = e => {
-    if (e.which === 1) appendCircle(e, containerEl);
-  };
-  
-  document.oncontextmenu = e => {
-    if (e.target.hasAttribute('href')) return false;
-    showMenu(e);
-  };
+document.oncontextmenu = e => {
+  if (e.target.hasAttribute('href')) return false;
+  showMenu(e);
 };
 
 document.onmousedown = e => {
@@ -45,6 +46,12 @@ document.onmouseup = e => {
     if (e.which === 3) window.open(e.target.href, '_blank');
   }
 };
+
+endLoading(1).then(() => enableScroll());
+
+//////////////////////////////////////////////////////////////////
+///////////////////////  Functions  //////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 function removeElement(el) {
   el.parentNode.removeChild(el);
@@ -69,14 +76,16 @@ function smoothScroll() {
 }
 
 function endLoading(delay = 0) {
-  setTimeout(() => {
-    loadingEl.classList.add('animated');
-  }, delay * 1000);
-
-  setTimeout(() => {
-    removeElement(loadingEl);
-    enableScroll();
-  }, delay * 1000 + 1500);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      loadingEl.classList.add('animated');
+    }, delay * 1000);
+  
+    setTimeout(() => {
+      removeElement(loadingEl);
+      resolve();
+    }, delay * 1000 + 1500);
+  });
 }
 
 function resizeBodyHeight() {
