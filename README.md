@@ -30,4 +30,4 @@
 - 透過切換 Body 的 CSS 屬性 `overflow: hidden`，簡單達成網頁載入完成前的封鎖捲動
 - 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 達成滾動視差，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
 - 為展示的作品封面加上鼠標碰觸 (CSS Hover) 和捲動頁面 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) 時的灰階上色互動效果，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
-- 針對觸控設備做互動效果優化：將鼠標碰觸作品時的灰階上色效果以使用者設備為條件做分離，使用非觸控設備開啟網頁才會加入
+- 針對使用者設備做互動效果優化，使用非觸控設備開啟網頁才會加入滑鼠碰觸元素的互動效果，如首頁作品圖片的灰階上色效果，以及 About 頁面中顯示的超連結底線
