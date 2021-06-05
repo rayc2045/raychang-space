@@ -30,10 +30,12 @@ img
 
 a
   color: $blue
-  text-decoration: none
+  text-decoration: underline $blue
   cursor: url('../../img/webp/hover.webp'), url('../../img/original/hover.png'), pointer
-  &:hover
-    text-decoration: underline $blue
+  &.hover-interaction
+    text-decoration: none
+    &:hover
+      text-decoration: underline $blue
 
 .hide
   display: none

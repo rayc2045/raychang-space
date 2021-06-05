@@ -6,13 +6,18 @@ const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
 const containerEl = document.querySelector('.container');
 const menuEl = document.querySelector('.menu');
+const aEls = document.querySelectorAll('a');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 disableScroll();
-if (!isTouchDevice) smoothScroll();
+
+if (!isTouchDevice) {
+  smoothScroll();
+  activateHoverInteraction(aEls);
+}
 
 window.onscroll = () => hideEl(menuEl);
 
@@ -73,6 +78,10 @@ function smoothScroll() {
     scrollEase: 0.08,
     maxOffset: 500,
   });
+}
+
+function activateHoverInteraction(els) {
+  els.forEach(el => el.classList.add('hover-interaction'));
 }
 
 function endLoading(delay = 0) {
