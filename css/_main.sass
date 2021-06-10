@@ -96,11 +96,14 @@ main
   border-bottom: 0.1rem solid $mediumGrey
   &.hover-interaction
     .work a
-      filter: grayscale(100%)
+      filter: grayscale(1)
       background-color: $lightGrey
       &:hover
-        filter: grayscale(0%)
+        filter: grayscale(0) brightness(0.9)
         background-color: $lightGrey2
+        // img
+        //   transform: scale(1.015)
+        //   transform-origin: 50% 50%
   .work
     margin-bottom: $gapSize
     list-style: none
@@ -129,6 +132,8 @@ main
     &.grayscale a
       background-color: $lightGrey
       filter: grayscale(100%)
+    // img
+    //   transition: transform 0.5s
     section
       margin-left: auto
       margin-top: 3.04rem
