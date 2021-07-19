@@ -5,25 +5,26 @@ const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
 const containerEl = document.querySelector('.container');
+const contentEl = document.querySelector('.content');
 const menuEl = document.querySelector('.menu');
-const aEls = document.querySelectorAll('a');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 disableScroll();
-
-if (!isTouchDevice) {
-  smoothScroll();
-  activateHoverInteraction(aEls);
-}
+if (!isTouchDevice) smoothScroll();
 
 window.onscroll = () => hideEl(menuEl);
 
-window.onload = () => {
+window.onload = async() => {
+  if (!isTouchDevice) {
+    const aEls = document.querySelectorAll('a');
+    activateHoverInteraction(aEls);
+  }
+  await endLoading();
+  enableScroll();
   resizeBodyHeight();
-  // endLoading().then(() => enableScroll()); // Font "Noto Sans TC" is too big
 };
 
 window.onresize = () => {
@@ -51,8 +52,6 @@ document.onmouseup = e => {
     if (e.which === 3) window.open(e.target.href, '_blank');
   }
 };
-
-endLoading(1).then(() => enableScroll());
 
 //////////////////////////////////////////////////////////////////
 ///////////////////////  Functions  //////////////////////////////
@@ -84,6 +83,10 @@ function activateHoverInteraction(els) {
   els.forEach(el => el.classList.add('hover-interaction'));
 }
 
+function resizeBodyHeight() {
+  document.body.style.height = viewportEl.scrollHeight + 'px';
+}
+
 function endLoading(delay = 0) {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -95,10 +98,6 @@ function endLoading(delay = 0) {
       resolve();
     }, delay * 1000 + 1500);
   });
-}
-
-function resizeBodyHeight() {
-  document.body.style.height = viewportEl.scrollHeight + 'px';
 }
 
 function appendCircle(e, element, duration = 1.5) {

@@ -1,0 +1,89 @@
+.markdown-html
+  margin: 2rem 0 
+  width: 75vw
+  font-size: 1.25rem
+  letter-spacing: 0.04rem
+  line-height: 1.5
+  +desktop
+    margin: 36px 0
+    font-size: 24px
+    letter-spacing: 0.5px
+  +mobile
+    margin: 8px 0
+    width: 85vw
+    font-size: 16px
+    letter-spacing: 0.6px
+    line-height: 1.6
+  img
+    +size(100%, auto)
+    pointer-events: none
+  .avatar img
+    width: 20.3rem
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) // x, y, blur, color
+    border-radius: 50%
+    +desktop
+      width: 390px
+    +mobile
+      width: 260px
+    @media screen and (max-width: 400px)
+      // width: 97%
+      display: block
+      margin: 0 auto
+  h1, h2
+    margin: 1.25rem 0
+    +desktop
+      margin: 24px 0
+  p, ul // for margin top
+    margin-top: 0
+  h3, p, ul, pre // for margin bottom
+    margin-bottom: 0.83rem
+    +desktop
+      margin-bottom: 16px
+  h3
+    margin-top: 1.25rem
+    font-size: 1.25em
+    +desktop
+      margin-top: 24px
+  p
+    text-align: justify
+  a
+    display: inline-block
+    code
+      cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
+  a.hover-interaction
+    img
+      transition: filter 0.75s
+  a.hover-interaction:hover
+    img
+      filter: brightness(0.9)
+  ul
+    padding-left: 2.1rem
+    +desktop
+      padding-left: 40px
+  li
+    margin-left: 0.5rem
+    +desktop
+      margin-left: 9px
+    +mobile
+      margin-left: -10px
+  pre, code
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace
+    font-size: 0.9em
+    background-color: $lightGrey
+    border-radius: 0.24rem
+    +desktop
+      border-radius: 6px
+  pre
+    padding: 16px
+    line-height: 1.45
+    white-space: pre
+    word-wrap: normal
+    overflow-x: auto
+    &::-webkit-scrollbar
+      height: 0.5rem
+      +desktop
+        height: 10px
+    &::-webkit-scrollbar-thumb
+      background-color: $lightGrey2
+  code
+    padding: .2em .4em
