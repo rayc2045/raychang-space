@@ -5,9 +5,8 @@ const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
 const containerEl = document.querySelector('.container');
-const contentEl = document.querySelector('.content');
 const menuEl = document.querySelector('.menu');
-const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
+const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
