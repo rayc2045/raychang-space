@@ -7,8 +7,7 @@ const viewportEl = document.querySelector('.viewport');
 const containerEl = document.querySelector('.container');
 const contentEl = document.querySelector('.markdown-html');
 const menuEl = document.querySelector('.menu');
-const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
-const markdownUrl = 'https://raw.githubusercontent.com/rayc2045/vanilla-calculator/master/README.md';
+const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
@@ -19,13 +18,17 @@ if (!isTouchDevice) smoothScroll();
 window.onscroll = () => hideEl(menuEl);
 
 window.onload = async() => {
+  const markdownUrl = getMarkdownUrl();
   await renderContent(markdownUrl);
 
   if (!isTouchDevice) {
     const aEls = document.querySelectorAll('a');
     activateHoverInteraction(aEls);
   }
-
+  // Todo Product Hunt link
+  if (document.title === 'Draggable To-do List') {
+    document.querySelector('p:nth-child(3)').innerHTML = `<a href="https://www.producthunt.com/posts/draggable-todo" target="_blank"><img style="width: 250px; height: 54px;" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=294817" alt="Draggable Todo on Product Hunt"/></a>`;
+  }
   await endLoading();
   enableScroll();
   resizeBodyHeight();
@@ -85,6 +88,31 @@ function smoothScroll() {
 
 function activateHoverInteraction(els) {
   els.forEach(el => el.classList.add('hover-interaction'));
+}
+
+function getMarkdownUrl() {
+  const title = document.title;
+  
+  if (title === 'Ray Chang Space')
+    return 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/README.md';
+  
+  if (title === 'Horizontal Scrolling Theater')
+    return 'https://raw.githubusercontent.com/rayc2045/horizontal-scrolling-theater/master/README.md';
+  
+  if (title === 'Ghibli Crawler')
+    return 'https://raw.githubusercontent.com/rayc2045/ghibli-crawler/master/README.md';
+  
+  if (title === 'Ghibli Gallery')
+    return 'https://raw.githubusercontent.com/rayc2045/ghibli-gallery/master/README.md';
+  
+  if (title === 'Block Memory Game')
+    return 'https://raw.githubusercontent.com/rayc2045/block-memory-game/master/README.md';
+  
+  if (title === 'Vanilla Calculator')
+    return 'https://raw.githubusercontent.com/rayc2045/vanilla-calculator/master/README.md';
+  
+  if (title === 'Draggable To-do List')
+    return 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/README.md';
 }
 
 function renderContent(url) {
