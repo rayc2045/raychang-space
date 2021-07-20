@@ -12,12 +12,11 @@ const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang
 document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
-disableScroll();
-if (!isTouchDevice) smoothScroll();
 
-window.onscroll = () => hideEl(menuEl);
+(async() => {
+  disableScroll();
+  if (!isTouchDevice) smoothScroll();
 
-window.onload = async() => {
   const markdownUrl = getMarkdownUrl();
   await renderContent(markdownUrl);
 
@@ -25,10 +24,15 @@ window.onload = async() => {
     const aEls = document.querySelectorAll('a');
     activateHoverInteraction(aEls);
   }
-  // Todo Product Hunt link
+  // Format Todo Product Hunt link image
   if (document.title === 'Draggable To-do List') {
     document.querySelector('p:nth-child(3)').innerHTML = `<a href="https://www.producthunt.com/posts/draggable-todo" target="_blank"><img style="width: 250px; height: 54px;" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=294817" alt="Draggable Todo on Product Hunt"/></a>`;
   }
+})();
+
+window.onscroll = () => hideEl(menuEl);
+
+window.onload = async() => {
   await endLoading();
   enableScroll();
   resizeBodyHeight();
@@ -92,7 +96,7 @@ function activateHoverInteraction(els) {
 
 function getMarkdownUrl() {
   const title = document.title;
-  
+
   if (title === 'Ray Chang Space') return 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/README.md';
 
   if (title === 'Draggable To-do List') return 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/README.md';
