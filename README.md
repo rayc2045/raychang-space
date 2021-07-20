@@ -1,4 +1,4 @@
-# Ray Chang Space - 2.5D Portfolio Website with Smooth-scrolling
+# Ray Chang Space - CMS Portfolio Site with Smooth-scrolling
 
 [![Photo](https://cdn.dribbble.com/users/3800131/screenshots/14628965/media/43ed0e7cda60ecdd5885fdd578b9f1d5.png)](https://dribbble.com/raychangdesign)
 
