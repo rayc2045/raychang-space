@@ -93,26 +93,11 @@ function activateHoverInteraction(els) {
 function getMarkdownUrl() {
   const title = document.title;
   
-  if (title === 'Ray Chang Space')
-    return 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/README.md';
-  
-  if (title === 'Horizontal Scrolling Theater')
-    return 'https://raw.githubusercontent.com/rayc2045/horizontal-scrolling-theater/master/README.md';
-  
-  if (title === 'Ghibli Crawler')
-    return 'https://raw.githubusercontent.com/rayc2045/ghibli-crawler/master/README.md';
-  
-  if (title === 'Ghibli Gallery')
-    return 'https://raw.githubusercontent.com/rayc2045/ghibli-gallery/master/README.md';
-  
-  if (title === 'Block Memory Game')
-    return 'https://raw.githubusercontent.com/rayc2045/block-memory-game/master/README.md';
-  
-  if (title === 'Vanilla Calculator')
-    return 'https://raw.githubusercontent.com/rayc2045/vanilla-calculator/master/README.md';
-  
-  if (title === 'Draggable To-do List')
-    return 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/README.md';
+  if (title === 'Ray Chang Space') return 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/README.md';
+
+  if (title === 'Draggable To-do List') return 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/README.md';
+
+  return `https://raw.githubusercontent.com/rayc2045/${title.toLocaleLowerCase().replaceAll(' ', '-')}/master/README.md`;
 }
 
 function renderContent(url) {
