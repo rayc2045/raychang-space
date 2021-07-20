@@ -71,8 +71,8 @@ const worksData = [
 class Portfolio {
   constructor() {
     // this.backgroundMusicEl = document.querySelector('.background-music');
-    this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
-    this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
+    this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
+    this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/type.mp3');
     this.loadingEl = document.querySelector('.loading');
     // this.questionSection = this.loadingEl.querySelector('.question-section');
     // this.questionYesButton = this.questionSection.querySelector('.button-yes');
