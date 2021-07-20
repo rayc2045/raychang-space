@@ -1,6 +1,6 @@
 # Ray Chang Space - 2.5D Portfolio Website with Smooth-scrolling
 
-[![Photo](https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/img/demo/01.png)](https://dribbble.com/raychangdesign)
+[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/14628965/media/43ed0e7cda60ecdd5885fdd578b9f1d5.png)](https://dribbble.com/raychangdesign)
 
 [> Ray Chang Space](https://rayc.dev)
 
