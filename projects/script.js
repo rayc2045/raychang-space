@@ -12,9 +12,11 @@ const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang
 document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
+disableScroll();
 
-(async() => {
-  disableScroll();
+window.onscroll = () => hideEl(menuEl);
+
+window.onload = async() => {
   const markdownUrl = getMarkdownUrl();
   await renderContent(markdownUrl);
 
@@ -23,11 +25,7 @@ document.oncontextmenu = () => false;
     activateHoverInteraction(aEls);
     smoothScroll();
   }
-})();
 
-window.onscroll = () => hideEl(menuEl);
-
-window.onload = async() => {
   await endLoading();
   enableScroll();
   resizeBodyHeight();
@@ -91,44 +89,44 @@ function activateHoverInteraction(els) {
 
 function getMarkdownUrl() {
   const title = document.title;
-
   if (title === 'Ray Chang Space') return 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/README.md';
-
   if (title === 'Draggable To-do List') return 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/README.md';
-
   return `https://raw.githubusercontent.com/rayc2045/${title.toLocaleLowerCase().replaceAll(' ', '-')}/master/README.md`;
 }
 
-function renderContent(url) {
-  return new Promise(resolve => {
-    fetch(url)
-      .then(res => res.text())
-      .then(content => {
-        const md = window.markdownit();
-        contentEl.innerHTML = md.render(content)
-          .replaceAll(`&lt;!-- `, '<div style="display:none;"')
-          .replaceAll(` --&gt;`, '</div>');
-      })
-      .then(() => {
-        document.querySelectorAll('.markdown-html a').forEach(a => {
-          a.target = '_blank';
-          a.rel = 'noreferrer noopener';
-        });
-        resolve();
-      });
-  })
+async function renderContent(url) {
+  // Test loading finish when page onload
+  // await new Promise(resolve => {
+  //   setTimeout(resolve, 10000)
+  // });
+
+  const res = await fetch(url)
+  const text = await res.text()
+  const md = window.markdownit();
+
+  contentEl.innerHTML = md.render(text)
+    .replaceAll(`&lt;!-- `, '<div style="display:none;"')
+    .replaceAll(` --&gt;`, '</div>');
+
+  document.querySelectorAll('.markdown-html a').forEach(a => {
+    a.target = '_blank';
+    a.rel = 'noreferrer noopener';
+  });
 }
 
 function resizeBodyHeight() {
   document.body.style.height = viewportEl.scrollHeight + 'px';
 }
 
-function endLoading(delay = 0) {
-  return new Promise(resolve => {
+async function endLoading(delay = 0) {
+  await new Promise(resolve => {
     setTimeout(() => {
       loadingEl.classList.add('animated');
+      resolve();
     }, delay * 1000);
-  
+  });
+
+  await new Promise(resolve => {
     setTimeout(() => {
       removeElement(loadingEl);
       resolve();
