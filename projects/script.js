@@ -15,18 +15,13 @@ document.oncontextmenu = () => false;
 
 (async() => {
   disableScroll();
-  if (!isTouchDevice) smoothScroll();
-
   const markdownUrl = getMarkdownUrl();
   await renderContent(markdownUrl);
 
   if (!isTouchDevice) {
     const aEls = document.querySelectorAll('a');
     activateHoverInteraction(aEls);
-  }
-  // Format Todo Product Hunt link image
-  if (document.title === 'Draggable To-do List') {
-    document.querySelector('p:nth-child(3)').innerHTML = `<a href="https://www.producthunt.com/posts/draggable-todo" target="_blank"><img style="width: 250px; height: 54px;" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=294817" alt="Draggable Todo on Product Hunt"/></a>`;
+    smoothScroll();
   }
 })();
 
