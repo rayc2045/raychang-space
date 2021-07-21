@@ -91,7 +91,7 @@ function smoothScroll() {
 }
 
 function activateHoverInteraction(els) {
-  els.forEach(el => el.classList.add('hover-interaction'));
+  contentEl.classList.add('hover-interaction');
 }
 
 function getMarkdownUrl() {

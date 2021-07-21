@@ -19,8 +19,13 @@
       transition: filter 0.75s
     img:hover
       filter: brightness(0.9)
+    a
+      text-decoration: none
+    a:hover
+      text-decoration: underline
   img
     +size(100%, auto)
+    pointer-events: none
     +iPad
       margin-left: -12.5vw // (100 - 75) / 2
       width: 100vw
@@ -57,6 +62,7 @@
     text-align: justify
   a
     display: inline-block
+    cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
     code
       cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
   ul
