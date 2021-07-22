@@ -24,9 +24,10 @@
       text-decoration: none
     a:hover
       text-decoration: underline
+  picture, img
+    pointer-events: none
   img
     +size(100%, auto)
-    pointer-events: none
     +iPad
       margin-left: -12.5vw // (100 - 75) / 2
       width: 100vw
@@ -59,8 +60,6 @@
     margin-top: 1.25rem
     +desktop
       margin-top: 24px
-  p
-    text-align: justify
   a
     display: inline-block
     cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
@@ -99,3 +98,13 @@
       background-color: $lightGrey2
   code
     padding: .2em .4em
+    text-indent: -2em
+  table
+    border-collapse: collapse
+  tr
+    th, td
+      padding: 6px 18px
+      border: 1px solid $black
+  tbody tr:nth-child(2n)
+    // background-color: $lightGrey
+    background-color: rgba(224, 224, 224, 0.8)
