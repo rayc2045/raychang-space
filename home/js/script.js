@@ -146,7 +146,6 @@ async function endLoading(delay = 0) {
       resolve();
     }, delay * 1000);
   });
-
   await new Promise(resolve => {
     setTimeout(() => {
       removeElement(loadingEl);
