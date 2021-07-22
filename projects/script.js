@@ -4,10 +4,10 @@ const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
-const containerEl = document.querySelector('.container');
-const contentEl = document.querySelector('.markdown-html');
+const containerEl = viewportEl.querySelector('.container');
+const contentEl = containerEl.querySelector('.markdown-html');
 const menuEl = document.querySelector('.menu');
-const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
+const pageAudio = new Audio('/public/assets/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
@@ -26,6 +26,10 @@ window.onload = async() => {
     smoothScroll();
   }
 
+  // Test loading finish when page onload
+  // await new Promise(resolve => {
+  //   setTimeout(resolve, 10000)
+  // });
   await endLoading();
   enableScroll();
   resizeBodyHeight();
@@ -74,10 +78,10 @@ function enableScroll() {
 }
 
 function smoothScroll() {
-  document.querySelector('.viewport').classList.add('SmoothScroll');
+  viewportEl.classList.add('SmoothScroll');
 
   new SmoothScroll({
-    target: document.querySelector('.container'),
+    target: containerEl,
     scrollEase: 0.08,
     maxOffset: 500,
   });
@@ -95,13 +99,8 @@ function getMarkdownUrl() {
 }
 
 async function renderContent(url) {
-  // Test loading finish when page onload
-  // await new Promise(resolve => {
-  //   setTimeout(resolve, 10000)
-  // });
-
-  const res = await fetch(url)
-  const text = await res.text()
+  const res = await fetch(url);
+  const text = await res.text();
   const md = window.markdownit();
 
   contentEl.innerHTML = md.render(text)
