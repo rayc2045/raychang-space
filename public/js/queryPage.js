@@ -84,6 +84,10 @@ async function endLoading(delay = 0) {
   });
 }
 
+function redirectToNotFound() {
+  window.location = '/404.html';
+}
+
 async function renderPage() {
   // /projects/query?repo=raychang-space&align=justify
   // /projects/query.html?repo=raychang-space&align=justify
@@ -114,8 +118,11 @@ async function renderPage() {
   document.title = document.querySelector('h1').textContent;
 }
 
-function redirectToNotFound() {
-  window.location = '/404.html';
+// Get query string
+function getParamsByUrl(url) {
+  const urlSearch = '?' + url.split('?')[1];
+  const urlSearchParams = new URLSearchParams(urlSearch);
+  return Object.fromEntries(urlSearchParams.entries());
 }
 
 async function getMarkdownText(url) {
@@ -145,13 +152,6 @@ function renderContent(markdownText, align) {
 
   if (align === 'justify')
     contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
-}
-
-// Get query string
-function getParamsByUrl(url) {
-  const urlSearch = '?' + url.split('?')[1];
-  const urlSearchParams = new URLSearchParams(urlSearch);
-  return Object.fromEntries(urlSearchParams.entries());
 }
 
 function activateHoverInteraction(els) {

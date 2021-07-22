@@ -4,7 +4,7 @@ const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
-const containerEl = document.querySelector('.container');
+const containerEl = viewportEl.querySelector('.container');
 const menuEl = document.querySelector('.menu');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
 
@@ -12,19 +12,19 @@ document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 disableScroll();
-if (!isTouchDevice) smoothScroll();
-
-window.onscroll = () => hideEl(menuEl);
 
 window.onload = async() => {
   if (!isTouchDevice) {
     const aEls = document.querySelectorAll('a');
     activateHoverInteraction(aEls);
+    smoothScroll();
   }
   await endLoading();
   enableScroll();
   resizeBodyHeight();
 };
+
+window.onscroll = () => hideEl(menuEl);
 
 window.onresize = () => {
   hideEl(menuEl);
@@ -33,11 +33,6 @@ window.onresize = () => {
 
 containerEl.onmousedown = e => {
   if (e.which === 1) appendCircle(e, containerEl);
-};
-
-document.oncontextmenu = e => {
-  if (e.target.hasAttribute('href')) return false;
-  showMenu(e);
 };
 
 document.onmousedown = e => {
@@ -52,13 +47,14 @@ document.onmouseup = e => {
   }
 };
 
+document.oncontextmenu = e => {
+  if (e.target.hasAttribute('href')) return false;
+  showMenu(e);
+};
+
 //////////////////////////////////////////////////////////////////
 ///////////////////////  Functions  //////////////////////////////
 //////////////////////////////////////////////////////////////////
-
-function removeElement(el) {
-  el.parentNode.removeChild(el);
-}
 
 function disableScroll() {
   document.body.style.overflow = 'hidden';
@@ -68,13 +64,18 @@ function enableScroll() {
   document.body.style.overflow = '';
 }
 
-function smoothScroll() {
-  document.querySelector('.viewport').classList.add('SmoothScroll');
-
-  new SmoothScroll({
-    target: document.querySelector('.container'),
-    scrollEase: 0.08,
-    maxOffset: 500,
+async function endLoading(delay = 0) {
+  await new Promise(resolve => {
+    setTimeout(() => {
+      loadingEl.classList.add('animated');
+      resolve();
+    }, delay * 1000);
+  });
+  await new Promise(resolve => {
+    setTimeout(() => {
+      removeElement(loadingEl);
+      resolve();
+    }, delay * 1000 + 1500);
   });
 }
 
@@ -82,20 +83,13 @@ function activateHoverInteraction(els) {
   els.forEach(el => el.classList.add('hover-interaction'));
 }
 
-function resizeBodyHeight() {
-  document.body.style.height = viewportEl.scrollHeight + 'px';
-}
+function smoothScroll() {
+  viewportEl.classList.add('SmoothScroll');
 
-function endLoading(delay = 0) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      loadingEl.classList.add('animated');
-    }, delay * 1000);
-  
-    setTimeout(() => {
-      removeElement(loadingEl);
-      resolve();
-    }, delay * 1000 + 1500);
+  new SmoothScroll({
+    target: containerEl,
+    scrollEase: 0.08,
+    maxOffset: 500,
   });
 }
 
@@ -136,12 +130,21 @@ function showMenu(e) {
   menuEl.style.top = menuPosY;
 }
 
+
 function hideEl(el){
   el.classList.add('hide');
+}
+
+function removeElement(el) {
+  el.parentNode.removeChild(el);
 }
 
 function playAudio(audio, volume = 1) {
   audio.currentTime = 0;
   audio.volume = volume;
   audio.play();
+}
+
+function resizeBodyHeight() {
+  document.body.style.height = viewportEl.scrollHeight + 'px';
 }
