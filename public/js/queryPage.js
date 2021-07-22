@@ -85,7 +85,7 @@ async function endLoading(delay = 0) {
 }
 
 function redirectToNotFound() {
-  window.location = '/404.html';
+  window.location = '/404';
 }
 
 async function renderPage() {
