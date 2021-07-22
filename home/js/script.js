@@ -58,8 +58,8 @@ window.onload = async() => {
   if (!isTouchDevice) {
     activateHoverInteraction([worksEl, footerEl]);
     worksEl.querySelectorAll('.work').forEach(workEl => {
-      workEl.onmouseenter = e => toggleGrayscale(e.target);
-      workEl.onmouseout = e => e.target.classList.remove('grayscale');
+      workEl.onmouseenter = () => workEls.forEach(el => toggleGrayscale(el));
+      workEl.onmouseout = () => workEls.forEach(el => el.classList.remove('grayscale'));
     });
     parallax();
     smoothScroll();
