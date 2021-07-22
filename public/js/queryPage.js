@@ -85,29 +85,33 @@ async function endLoading(delay = 0) {
 }
 
 async function renderPage() {
+  // /projects/query?repo=raychang-space&align=justify
   // /projects/query.html?repo=raychang-space&align=justify
+  // /projects/query/?repo=raychang-space&align=justify
   const currentUrl = window.location.href;
-  let { repo, author, branch, md, align } = getParamsByUrl(currentUrl);
+  let { repo, author, branch, path, md, align } = getParamsByUrl(currentUrl);
   if (!repo) return redirectToNotFound();
 
   // Init query params
   author = author || 'rayc2045';
   branch = branch || 'master';
+  path = path || '';
   md = md || 'README';
   align = align || 'left';
-  // console.log({ repo, author, branch, md, align });
+  // console.log({ repo, author, branch, path, md, align });
 
-  const markdownLink = `https://raw.githubusercontent.com/${author}/${repo}/${branch}/${md}.md`;
+  const markdownLink = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
   const markdownText = await getMarkdownText(markdownLink);
-  const splitMarkdownText = markdownText.split('/');
+  const splitMdTextArray = markdownText.split('/');
 
   if (
     markdownText === '404: Not Found' ||
-    splitMarkdownText[splitMarkdownText.length - 1] === `${md}.md`
+    splitMdTextArray[splitMdTextArray.length - 1] === `${md}.md`
   )
     return redirectToNotFound();
 
   renderContent(markdownText, align);
+  document.title = document.querySelector('h1').textContent;
 }
 
 function redirectToNotFound() {
@@ -122,19 +126,25 @@ async function getMarkdownText(url) {
 function renderContent(markdownText, align) {
   const markdownit = window.markdownit();
 
-  const contentHTML = markdownit.render(markdownText)
+  contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll(`&lt;!-- `, '<div style="display:none;"')
     .replaceAll(` --&gt;`, '</div>');
 
-  contentEl.innerHTML = contentHTML;
-
-  document.querySelectorAll('.markdown-html a').forEach(a => {
+  contentEl.querySelectorAll('a').forEach(a => {
     a.target = '_blank';
     a.rel = 'noreferrer noopener';
   });
 
+  contentEl.querySelectorAll('img').forEach(img => {
+    const size = getParamsByUrl(img.src).s;
+    if (size) {
+      // img.src = img.src.replace(`?s=${size}`, `?s=${size * 1.45}`);
+      img.style = `width: ${size * 1.45}px;`;
+    }
+  });
+
   if (align === 'justify')
-    document.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
+    contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
 }
 
 // Get query string
