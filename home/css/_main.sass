@@ -16,7 +16,7 @@
   outline: none
   appearance: none
   -webkit-touch-callout: none
-  cursor: url('../../public/assets/img/webp/arrow.webp'), url('../../public/assets/img/original/arrow.png'), auto
+  cursor: url('/public/assets/img/webp/arrow.webp'), url('/public/assets/img/original/arrow.png'), auto
 
 html
   font-family: 'Merriweather', serif
@@ -37,7 +37,7 @@ a, .contact, .to-top
   font-size: 1rem
   color: $black
   text-decoration: underline
-  cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
+  cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
   &:color
     color: $black
   &:visited
@@ -58,7 +58,10 @@ input, textarea, button
   background-color: transparent
   font-family: 'Merriweather', serif
 button
-  cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
+  cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
+
+.SmoothScroll
+  position: fixed
   
 .container
   padding: 3.18rem 5.6rem
@@ -186,7 +189,7 @@ main
       // background-image: $noise
       filter: grayscale(100%)
       overflow: hidden
-      cursor: url('../../public/assets/img/original/arrow.svg') 50 50, pointer
+      cursor: url('/public/assets/img/original/arrow.svg') 50 50, pointer
       transition: filter 0.75s, background-color 0.75s
     &.color a
       background-color: $lightGrey2
@@ -215,7 +218,7 @@ main
         color: $mediumGrey
       .info
         background-color: transparent
-        cursor: url('../../public/assets/img/webp/hover.webp'), url('../../public/assets/img/original/hover.png'), pointer
+        cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
         &:hover
           background-color: transparent
 
