@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Ray Chang Space",
+    "subtitle": "CMS portfolio site with smooth-scrolling",
+    "repo": "raychang-space",
+    "link": "https://rayc.dev/"
+  },
+  {
+    "title": "Horizontal Scrolling Theater",
+    "subtitle": "Enjoy the online movie shopping",
+    "repo": "horizontal-scrolling-theater",
+    "link": "https://vuejs-theater.netlify.app/"
+  },
+  {
+    "title": "Ghibli Crawler",
+    "subtitle": "Automatically download 1,178 studio Ghibli's work photos",
+    "repo": "ghibli-crawler",
+    "link": "https://rayc.dev/projects/ghibli-crawler"
+  },
+  {
+    "title": "Ghibli Gallery",
+    "subtitle": "Remaster studio Ghibli's work album with Vue 3.0",
+    "repo": "ghibli-gallery",
+    "link": "https://rayc2045.github.io/ghibli-gallery/"
+  },
+  {
+    "title": "Block Memory Game",
+    "subtitle": "How many levels can you accomplish?",
+    "repo": "block-memory-game",
+    "link": "https://rayc2045.github.io/block-memory-game/"
+  },
+  {
+    "title": "Vanilla Calculator",
+    "subtitle": "Elegantly shows the result immediately",
+    "repo": "vanilla-calculator",
+    "link": "https://rayc2045.github.io/vanilla-calculator/"
+  },
+  {
+    "title": "Draggable To-do List",
+    "subtitle": "Featured by autosave and markdown support",
+    "repo": "draggable-todoList",
+    "link": "https://rayc2045.github.io/draggable-todoList/"
+  },
+  {
+    "title": "Dribbble Works",
+    "subtitle": "See my design works on Dribbble",
+    "link": "https://dribbble.com/raychangdesign"
+  },
+  {
+    "title": "Medium Blog",
+    "subtitle": "Read my latest technical article",
+    "link": "https://raychangdesign.medium.com/"
+  }
+]
