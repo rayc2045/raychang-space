@@ -1,13 +1,12 @@
 'use strict'
 
-const isTouchDevice = 'ontouchstart' in document.documentElement;
-const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
 const containerEl = viewportEl.querySelector('.container');
 const contentEl = containerEl.querySelector('.markdown-html');
 const menuEl = document.querySelector('.menu');
-const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
+const isTouchDevice = 'ontouchstart' in document.documentElement;
+const pageAudio = new Audio('/public/assets/audio/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
@@ -15,13 +14,20 @@ document.oncontextmenu = () => false;
 disableScroll();
 
 window.onload = async() => {
+  const markdownFile = '/about/rayc_resume.md';
+  const markdownText = await getMarkdownText(markdownFile);
+  await renderContent(markdownText);
+
   if (!isTouchDevice) {
     activateHoverInteraction([contentEl]);
     smoothScroll();
-    await endLoading(0.3);
+    // Test async/await
+    // await new Promise(resolve => setTimeout(resolve, 10000));
+    await endLoading(0.25);
   } else {
     await endLoading();
   }
+
   enableScroll();
   resizeBodyHeight();
 };
@@ -31,10 +37,6 @@ window.onscroll = () => hideEl(menuEl);
 window.onresize = () => {
   hideEl(menuEl);
   resizeBodyHeight();
-};
-
-containerEl.onmousedown = e => {
-  if (e.which === 1) appendCircle(e, containerEl);
 };
 
 document.onmousedown = e => {
@@ -52,6 +54,10 @@ document.onmouseup = e => {
 document.oncontextmenu = e => {
   if (e.target.hasAttribute('href')) return false;
   showMenu(e);
+};
+
+containerEl.onmousedown = e => {
+  if (e.which === 1) appendCircle(e, containerEl);
 };
 
 //////////////////////////////////////////////////////////////////
@@ -79,6 +85,42 @@ async function endLoading(delay = 0) {
       resolve();
     }, delay * 1000 + 1500);
   });
+}
+
+async function renderContent(markdownText) {
+  const markdownit = window.markdownit();
+
+  contentEl.innerHTML = markdownit.render(markdownText)
+    .replaceAll(`&lt;!-- `, '<div style="display:none;"')
+    .replaceAll(` --&gt;`, '</div>');
+
+  contentEl.querySelectorAll('a').forEach(a => {
+    a.target = '_blank';
+    a.rel = 'noreferrer noopener';
+  });
+
+  contentEl.querySelectorAll('img').forEach(img => {
+    const size = getParamsByUrl(img.src).s;
+    const magnifyScale = 1.5;
+    if (size) {
+      img.src = img.src.replace(`?s=${size}`, `?s=${size * magnifyScale}`);
+      img.style = `width: ${size * magnifyScale}px; hight: auto;`;
+    }
+  });
+
+  contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
+}
+
+// Get query string
+function getParamsByUrl(url) {
+  const urlSearch = url.split('?')[1];
+  const urlSearchParams = new URLSearchParams(urlSearch);
+  return Object.fromEntries(urlSearchParams.entries());
+}
+
+async function getMarkdownText(url) {
+  const res = await fetch(url);
+  return await res.text();
 }
 
 function activateHoverInteraction(els) {
@@ -131,7 +173,6 @@ function showMenu(e) {
   menuEl.style.left = menuPosX;
   menuEl.style.top = menuPosY;
 }
-
 
 function hideEl(el){
   el.classList.add('hide');
