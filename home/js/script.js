@@ -66,7 +66,7 @@ window.onload = async() => {
   }
   // Test async/await
   // await new Promise(resolve => setTimeout(resolve, 10000));
-  await endLoading(0.5);
+  await endLoading(0.25);
   enableScroll();
   resizeBodyHeight();
 };

@@ -19,7 +19,7 @@ window.onload = async() => {
     activateHoverInteraction([contentEl]);
     smoothScroll();
   }
-  await endLoading(0.5);
+  await endLoading(0.3);
   enableScroll();
   resizeBodyHeight();
 };
