@@ -186,7 +186,7 @@ async function updateWorks() {
   const works = await loadData('/public/data/works.json');
 
   works.forEach((work, idx) => {
-    worksEl.innerHTML += `
+    let contentHTML = `
       <li class="work">
         <a href="${work.link}" target="_blank" rel="noreferrer noopener">
           <picture>
@@ -205,6 +205,11 @@ async function updateWorks() {
         </section>
       </li>
     `
+
+    if (window.location.href.includes('localhost:'))
+      contentHTML = contentHTML.replaceAll('query?', 'query.html?')
+
+    worksEl.innerHTML += contentHTML;
   });
 }
 
