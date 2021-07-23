@@ -5,6 +5,7 @@ const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const loadingEl = document.querySelector('.loading');
 const viewportEl = document.querySelector('.viewport');
 const containerEl = viewportEl.querySelector('.container');
+const contentEl = containerEl.querySelector('.markdown-html');
 const menuEl = document.querySelector('.menu');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/page.mp3');
 
@@ -15,11 +16,10 @@ disableScroll();
 
 window.onload = async() => {
   if (!isTouchDevice) {
-    const aEls = document.querySelectorAll('a');
-    activateHoverInteraction(aEls);
+    activateHoverInteraction([contentEl]);
     smoothScroll();
   }
-  await endLoading();
+  await endLoading(0.5);
   enableScroll();
   resizeBodyHeight();
 };

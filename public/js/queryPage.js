@@ -20,11 +20,9 @@ window.onload = async() => {
     activateHoverInteraction([contentEl]);
     smoothScroll();
   }
-  // Test loading finish when page onload
-  // await new Promise(resolve => {
-  //   setTimeout(resolve, 10000)
-  // });
-  await endLoading();
+  // Test async/await
+  // await new Promise(resolve => setTimeout(resolve, 10000));
+  await endLoading(0.5);
   enableScroll();
   resizeBodyHeight();
 };

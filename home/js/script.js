@@ -64,9 +64,9 @@ window.onload = async() => {
     parallax();
     smoothScroll();
   }
-  // Test loading finish when page onload
+  // Test async/await
   // await new Promise(resolve => setTimeout(resolve, 10000));
-  await endLoading();
+  await endLoading(0.5);
   enableScroll();
   resizeBodyHeight();
 };
@@ -184,8 +184,8 @@ function checkDateEveryMinute() {
 
 async function updateWorks() {
   const works = await loadData('/public/data/works.json');
-  const filterWorks = works.filter(work => work.title !== 'Ray Chang Space');
-  
+  const filterWorks = works.filter(work => work.show);
+
   filterWorks.forEach((work, idx) => {
     worksEl.innerHTML += `
       <li class="work">
