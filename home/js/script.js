@@ -184,9 +184,8 @@ function checkDateEveryMinute() {
 
 async function updateWorks() {
   const works = await loadData('/public/data/works.json');
-  const filterWorks = works.filter(work => work.show);
 
-  filterWorks.forEach((work, idx) => {
+  works.forEach((work, idx) => {
     worksEl.innerHTML += `
       <li class="work">
         <a href="${work.link}" target="_blank" rel="noreferrer noopener">
@@ -197,7 +196,7 @@ async function updateWorks() {
           </picture>
         </a>
         <section>
-          <div class="number">${formatNumber(filterWorks.length - idx)}</div>
+          <div class="number">${formatNumber(works.length - idx)}</div>
           <div class="title">${work.title}</div>
           <div class="subtitle">${work.subtitle}${work.repo
             ? ` (<a class="info" href="${`/projects/query?repo=${work.repo}${work.align ? '&align=justify' : ''}`}">info</a>)`
