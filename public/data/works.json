@@ -20,7 +20,7 @@
     "subtitle": "Automatically download 1,178 studio Ghibli's work photos",
     "repo": "ghibli-crawler",
     "align": true,
-    "link": "https://rayc.dev/projects/ghibli-crawler",
+    "link": "https://rayc.dev/projects/query?repo=ghibli-crawler",
     "show": true
   },
   {
