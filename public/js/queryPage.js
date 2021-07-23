@@ -118,7 +118,7 @@ async function renderPage() {
 
 // Get query string
 function getParamsByUrl(url) {
-  const urlSearch = '?' + url.split('?')[1];
+  const urlSearch = url.split('?')[1];
   const urlSearchParams = new URLSearchParams(urlSearch);
   return Object.fromEntries(urlSearchParams.entries());
 }
