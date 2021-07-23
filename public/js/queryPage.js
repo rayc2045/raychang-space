@@ -105,8 +105,8 @@ async function renderPage() {
   align = align || 'left';
   // console.log({ repo, author, branch, path, md, align });
 
-  const markdownLink = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
-  const markdownText = await getMarkdownText(markdownLink);
+  const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
+  const markdownText = await getMarkdownText(markdownFile);
   const splitMdTextArray = markdownText.split('/');
 
   if (
@@ -145,9 +145,10 @@ function renderContent(markdownText, align) {
 
   contentEl.querySelectorAll('img').forEach(img => {
     const size = getParamsByUrl(img.src).s;
+    const magnifyScale = 1.5;
     if (size) {
-      // img.src = img.src.replace(`?s=${size}`, `?s=${size * 1.45}`);
-      img.style = `width: ${size * 1.45}px;`;
+      img.src = img.src.replace(`?s=${size}`, `?s=${size * magnifyScale}`);
+      img.style = `width: ${size * magnifyScale}px; hight: auto;`;
     }
   });
 
