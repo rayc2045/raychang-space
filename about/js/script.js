@@ -18,8 +18,10 @@ window.onload = async() => {
   if (!isTouchDevice) {
     activateHoverInteraction([contentEl]);
     smoothScroll();
+    await endLoading(0.3);
+  } else {
+    await endLoading();
   }
-  await endLoading(0.3);
   enableScroll();
   resizeBodyHeight();
 };

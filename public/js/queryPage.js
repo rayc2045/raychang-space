@@ -19,10 +19,13 @@ window.onload = async() => {
   if (!isTouchDevice) {
     activateHoverInteraction([contentEl]);
     smoothScroll();
+    // Test async/await
+    // await new Promise(resolve => setTimeout(resolve, 10000));
+    await endLoading(0.25);
+  } else {
+    await endLoading();
   }
-  // Test async/await
-  // await new Promise(resolve => setTimeout(resolve, 10000));
-  await endLoading(0.25);
+
   enableScroll();
   resizeBodyHeight();
 };
