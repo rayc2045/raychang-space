@@ -148,6 +148,9 @@ function renderContent(markdownText, align) {
     }
   });
 
+  // highlight.js
+  hljs.highlightAll();
+
   if (align === 'justify')
     contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
 }
