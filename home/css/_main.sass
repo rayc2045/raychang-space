@@ -191,12 +191,12 @@ main
       overflow: hidden
       cursor: url('/public/assets/img/original/arrow.svg') 50 50, pointer
       transition: filter 0.75s, background-color 0.75s
-    &.color a
-      background-color: $lightGrey2
-      filter: grayscale(0%)
-    &.grayscale a
-      background-color: $lightGrey
-      filter: grayscale(100%)
+      &.color
+        background-color: $lightGrey2
+        filter: grayscale(0%)
+      &.grayscale
+        background-color: $lightGrey
+        filter: grayscale(100%)
     // img
     //   transition: transform 0.5s
     section

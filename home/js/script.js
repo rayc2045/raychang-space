@@ -52,15 +52,17 @@ setTimeoutToCheckDateEveryMinute();
 window.onload = async() => {
   initBodyParams();
   await updateWorks();
-  const workEls = worksEl.querySelectorAll('.work');
-  scrollToggleClass(workEls, 'color');
+  const coverEls = worksEl.querySelectorAll('.work > a');
+  scrollToggleClass(coverEls, 'color');
 
   if (!isTouchDevice) {
     activateHoverInteraction([worksEl, footerEl]);
-    worksEl.querySelectorAll('.work').forEach(workEl => {
-      workEl.onmouseenter = () => workEls.forEach(el => toggleGrayscale(el));
-      workEl.onmouseout = () => workEls.forEach(el => el.classList.remove('grayscale'));
+
+    coverEls.forEach(cover => {
+      cover.onmouseenter = () => coverEls.forEach(cover => toggleGrayscale(cover));
+      cover.onmouseout = () => coverEls.forEach(cover => cover.classList.remove('grayscale'));
     });
+
     parallax();
     smoothScroll();
     // Test async/await
