@@ -28,4 +28,4 @@
 - 為展示的作品封面加上鼠標碰觸和捲動頁面時，讓到達畫面中間的作品呈現灰階轉彩色的互動效果 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) ，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
 - 針對使用者設備做互動效果優化，使用非觸控設備開啟網頁才會加入滑鼠碰觸元素的互動效果，如首頁作品封面的灰階轉彩色效果，以及在 About 頁面中，鼠標碰觸超連結時顯示的底線
 - 善用 JavaScript `Async/Await` 語法排程管理同步與非同步程式碼，使抓取資料、頁面渲染完畢到 Loading 動畫結束的過程始終穩定流暢
-- [Project 作品介紹頁面](https://rayc.dev/projects/query?repo=raychang-space&align-justify) 使用 CMS 內容管理作法，透過 Query String 連動 Github 上的 .md 檔案，再搭配 [markdown-it](https://github.com/markdown-it/markdown-it#markdown-it-) 和 [highlight.js](https://github.com/highlightjs/highlight.js/#highlightjs) 套件渲染出 markdown 格式化後的頁面，大大減少日後內容更新的成本
+- [Project 作品介紹頁面](https://rayc.dev/projects/query?repo=raychang-space&align-justify) 使用 Markdown CMS 內容管理作法，透過 Query String 連動 Github 上的 .md 檔案，再搭配 [markdown-it](https://github.com/markdown-it/markdown-it#markdown-it-) 和 [highlight.js](https://github.com/highlightjs/highlight.js/#highlightjs) 套件渲染出 markdown 格式化後的頁面，大大減少日後內容更新的成本
