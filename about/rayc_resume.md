@@ -16,7 +16,7 @@
 ### 技能與開發成就 SKILLS & ACHIEVEMENTS
 - 具備專業級別的圖像處理能力，修圖、去背、調色、降解以讓圖片在網頁中有更快的載入速度，甚至使用 Machine Learning 提高圖像解析度都不是問題。
 - 具備 UI/UX 設計概念，親手設計與實作個人網站、手刻 [精美計算機](https://rayc2045.github.io/vanilla-calculator/)。
-- 開發上做到 Pixel perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式排版](https://rayc.dev)。
+- 開發上做到 Pixel perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式設計](https://rayc.dev)。
 - 善用 CSS 預處理器 Sass，以及懂得使用 Tailwind/Bootstrap 加速介面開發。
 - 熟悉 JavaScript ES6，能夠撰寫清楚明瞭、容易維護的程式碼。
 - 懂得 API 串接與 Git 版本控制，以及使用 Vite/Vue CLI 進行專案開發和打包。
@@ -24,11 +24,11 @@
 - 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 伺服器端渲染網站。
 
 ### 代表作品 WORKS
-- [Ray Chang Space](https://rayc.dev/projects/query?repo=raychang-space&align=justify) (視覺上 3D 的個人網站/作品集網站，在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
+- [Ray Chang Space](https://rayc.dev/projects/query?repo=raychang-space&align=justify) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過在網址中加入 Query String，渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/query?repo=horizontal-scrolling-theater&align=justify) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
 - [Ghibli Crawler](https://rayc.dev/projects/query?repo=ghibli-crawler&align=justify) (由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照)
 - [Ghibli Gallery](https://rayc.dev/projects/query?repo=ghibli-gallery&align=justify) (為吉卜力工作室作品相簿重新設計並打造的網站，使用 Vue 開發而成的 SPA 架構使其擁有更流暢的使用體驗)
-- [Draggable Todo](https://rayc.dev/projects/query?repo=draggable-todoList&align=justify) (歷經數十個版本的迭代開發、絕對好用的 Chrome Extension；除了別於一般待辦清單，擁有任務拖曳和 Markdown Link 轉譯的功能，甚至可以從中享受到彩蛋動畫特效，以及讓你成就感滿滿的《薩爾達：荒野之息》經典音效)
+- [Draggable Todo](https://rayc.dev/projects/query?repo=draggable-todoList&align=justify) (歷經數十個版本的迭代開發、絕對好用的 Chrome Extension；除了別於一般待辦清單，擁有任務拖曳和 Markdown Link 語法支持的功能，甚至可以從中享受到彩蛋動畫特效，以及讓你成就感滿滿的《薩爾達：荒野之息》經典音效)
 
 ### 留在最後 LAST WORDS
 感謝你讀到了這裡，網路可以說是 21 世紀最棒的發明了，它成為了你我之間毫無阻礙的溝通橋樑，如果想再認識我多一點，或是與我聯繫，歡迎透過：
