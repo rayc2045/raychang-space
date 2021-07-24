@@ -89,10 +89,18 @@ function redirectToNotFound() {
   window.location = '/404';
 }
 
+// /projects/query?repo=raychang-space&align=justify
+// /projects/query.html?repo=raychang-space&align=justify
+// /projects/query/?repo=raychang-space&align=justify
 async function renderPage() {
-  // /projects/query?repo=raychang-space&align=justify
-  // /projects/query.html?repo=raychang-space&align=justify
-  // /projects/query/?repo=raychang-space&align=justify
+  const isAboutPage = window.location.pathname.includes('/about');
+
+  if (isAboutPage) {
+    const markdownFile = '/about/rayc_resume.md'
+    const markdownText = await getMarkdownText(markdownFile);
+    return renderContent(markdownText, 'justify', false);
+  }
+
   const currentUrl = window.location.href;
   let { repo, author, branch, path, md, align } = getParamsByUrl(currentUrl);
   if (!repo) return redirectToNotFound();
@@ -131,7 +139,7 @@ async function getMarkdownText(url) {
   return await res.text();
 }
 
-function renderContent(markdownText, align) {
+function renderContent(markdownText, align, highlight = true) {
   const markdownit = window.markdownit();
 
   // Hide comment
@@ -140,7 +148,7 @@ function renderContent(markdownText, align) {
     .replaceAll(` --&gt;`, '</div>');
   
   // highlight.js
-  hljs.highlightAll();
+  if (highlight) hljs.highlightAll();
 
   // Set paragraph text align to justify or not
   if (align === 'justify') contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
