@@ -92,7 +92,7 @@
       };
 
       function getParamsObjectByUrl(url) {
-        const urlSearch = '?' + url.split('?')[1];
+        const urlSearch = url.split('?')[1];
         const urlSearchParams = new URLSearchParams(urlSearch);
         return Object.fromEntries(urlSearchParams.entries());
       }
