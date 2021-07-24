@@ -134,29 +134,30 @@ async function getMarkdownText(url) {
 function renderContent(markdownText, align) {
   const markdownit = window.markdownit();
 
+  // Hide comment
   contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll(`&lt;!-- `, '<div style="display:none;"')
     .replaceAll(` --&gt;`, '</div>');
+  
+  // highlight.js
+  hljs.highlightAll();
 
+  // Set paragraph text align to justify or not
+  if (align === 'justify') contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
+
+  // Set anchor open in blank
   contentEl.querySelectorAll('a').forEach(a => {
     a.target = '_blank';
     a.rel = 'noreferrer noopener';
   });
 
+  // Init img size and class
   contentEl.querySelectorAll('img').forEach(img => {
-    const size = getParamsByUrl(img.src).s;
+    const { s, c } = getParamsByUrl(img.src);
     const magnifyScale = 1.5;
-    if (size) {
-      img.src = img.src.replace(`?s=${size}`, `?s=${size * magnifyScale}`);
-      img.style = `width: ${size * magnifyScale}px; hight: auto;`;
-    }
+    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
+    if (c) img.classList.add(c);
   });
-
-  // highlight.js
-  hljs.highlightAll();
-
-  if (align === 'justify')
-    contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
 }
 
 function activateHoverInteraction(els) {
