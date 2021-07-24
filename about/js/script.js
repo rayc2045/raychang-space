@@ -90,25 +90,27 @@ async function endLoading(delay = 0) {
 async function renderContent(markdownText) {
   const markdownit = window.markdownit();
 
+  // Hide comment
   contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll(`&lt;!-- `, '<div style="display:none;"')
     .replaceAll(` --&gt;`, '</div>');
 
+  // Set paragraph text align to justify
+  contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
+
+  // Set anchor open in blank
   contentEl.querySelectorAll('a').forEach(a => {
     a.target = '_blank';
     a.rel = 'noreferrer noopener';
   });
 
+  // Init img size and class
   contentEl.querySelectorAll('img').forEach(img => {
-    const size = getParamsByUrl(img.src).s;
+    const { s, c } = getParamsByUrl(img.src);
     const magnifyScale = 1.5;
-    if (size) {
-      img.src = img.src.replace(`?s=${size}`, `?s=${size * magnifyScale}`);
-      img.style = `width: ${size * magnifyScale}px; hight: auto;`;
-    }
+    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
+    if (c) img.classList.add(c);
   });
-
-  contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
 }
 
 // Get query string

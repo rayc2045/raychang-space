@@ -2,7 +2,7 @@
 
 [> 閱讀 PDF](https://rayc.dev/about/rayc_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=125)
 
-![Photo](https://avatars.githubusercontent.com/u/39514595?s=260)
+![Photo](https://avatars.githubusercontent.com/u/39514595?s=260&c=avatar)
 
 ### 簡介 SUMMARY
 本名張庭睿，或者直接叫我 Ray。居住於台北市，熱衷網站開發和設計，認為兩者相輔相臣，致力於做到開發如同揮劍一般優雅；做出功能完善、賞心悅目的網站，是我最有成就感的時候。
