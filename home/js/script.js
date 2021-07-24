@@ -189,6 +189,7 @@ function checkDateEveryMinute() {
 
 async function updateWorks() {
   const works = await loadData('/public/data/works.json');
+  const hostname = window.location.hostname;
 
   works.forEach((work, idx) => {
     let contentHTML = `
@@ -211,9 +212,7 @@ async function updateWorks() {
       </li>
     `
 
-    if (window.location.href.includes('localhost:'))
-      contentHTML = contentHTML.replaceAll('query?', 'query.html?')
-
+    if (hostname === 'localhost') contentHTML = contentHTML.replaceAll('query?', 'query.html?');
     worksEl.innerHTML += contentHTML;
   });
 }
