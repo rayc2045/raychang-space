@@ -5,7 +5,7 @@
 [> Ray Chang Space](https://rayc.dev)
 
 ### 簡介
-我始終認為，設計與開發是一體兩面，設計本是為開發而存在，開發也是為了完成設計，兩者相輔相成、互相影響。因此在網站的主頁中，我使用建築圖與對設計和開發的解釋，來表現自己在前端學習上，執著於兼顧清晰的設計與流暢的開發；網站設計上，我以報紙風格做為基礎，加入噪點以實現擬似紙張的質感，並刻意封鎖毫不必要的使用者事件（如文字選取、圖片拖移、右鍵點擊）、使用更有記憶性的鼠標圖案、加入平滑滾動與滾動視差，以及開發出鼠標觸碰作品圖的漸變效果和連絡表單輸入錯誤的微互動。
+我始終認為，設計與開發是一體兩面，設計本是為開發而存在，開發也是為了完成設計，兩者相輔相成、互相影響。因此在網站的主頁中，我使用建築圖與對設計和開發的解釋，來表現自己在前端學習上，執著於兼顧清晰的設計與流暢的開發；網站設計上，我以報紙風格做為基礎，加入噪點填充背景以實現擬似紙張的質感，並刻意封鎖毫不必要的使用者事件（如文字選取和圖片拖移）、使用更有記憶性的鼠標圖案、加入平滑滾動與滾動視差來提升瀏覽體驗和網頁立體感；而在開發上，除了完成作品區塊三層的互動效果和連絡表單的微互動，也實現將首頁以外的其他頁面結合 Markdown CMS 內容管理系統。
 
 ### 外觀與互動設計
 - 使用非純白 `#F9F9F9` 網頁底色，以及使用 `data:image` [噪點](http://noisepng.com/) 填充頁面，增添紙張印刷的質感
@@ -28,4 +28,4 @@
 - 為展示的作品封面加上鼠標碰觸和捲動頁面時，讓到達畫面中間的作品呈現灰階轉彩色的互動效果 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) ，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
 - 針對使用者設備做互動效果優化，使用非觸控設備開啟網頁才會加入滑鼠碰觸元素的互動效果，如首頁作品封面的灰階轉彩色效果，以及在 About 頁面中，鼠標碰觸超連結時顯示的底線
 - 善用 JavaScript `Async/Await` 語法排程管理同步與非同步程式碼，使抓取資料、頁面渲染完畢到 Loading 動畫結束的過程始終穩定流暢
-- About 和 Projects 頁面使用 Markdown CMS 內容管理作法，透過連動 Markdown 格式檔案，再搭配 [markdown-it](https://github.com/markdown-it/markdown-it#markdown-it-) 套件渲染頁面，以及使用 [highlight.js](https://github.com/highlightjs/highlight.js/#highlightjs) 套件對程式碼做高亮效果 (Syntax highlighting)，大大減少日後內容更新的成本
+- 首頁以外的頁面使用 Markdown CMS 內容管理作法，透過在網址夾帶參數來連動 Markdown 格式檔案，再搭配 [markdown-it](https://github.com/markdown-it/markdown-it#markdown-it-) 套件渲染頁面，以及使用 [highlight.js](https://github.com/highlightjs/highlight.js/#highlightjs) 套件對程式碼做高亮效果 (Syntax highlighting)，大大減少日後內容更新的成本
