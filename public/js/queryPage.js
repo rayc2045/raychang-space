@@ -14,7 +14,7 @@ document.oncontextmenu = () => false;
 disableScroll();
 
 window.onload = async() => {
-  await renderPage();
+  renderPage();
 
   if (!isTouchDevice) {
     activateHoverInteraction([contentEl]);
@@ -85,10 +85,10 @@ async function endLoading(delay = 0) {
   });
 }
 
-async function renderPage() {
+function renderPage() {
   let currentUrl = window.location.href;
   const path = window.location.pathname;
-  const paramsObj = getParamsByUrl(currentUrl); // url/?repo=raychang-space
+  const paramsObj = getParamsByUrl(currentUrl); // about/?md=about&highlight=false
 
   if (paramsObj.repo) return renderGithubPage(paramsObj);
   if (paramsObj.md) return renderMarkdownPage(path, paramsObj);
