@@ -26,7 +26,7 @@
 ### 代表作品 WORKS
 - [Ray Chang Space](https://rayc.dev/projects/query?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過自定義連結，渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/query?repo=horizontal-scrolling-theater) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
-- [Ghibli Crawler](https://rayc.dev/projects/query?repo=ghibli-crawler) (由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照)
+- [Ghibli Crawler](https://rayc.dev/projects/query?repo=ghibli-crawler&align=left) (由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照)
 - [Ghibli Gallery](https://rayc.dev/projects/query?repo=ghibli-gallery) (為吉卜力工作室作品相簿重新設計並打造的網站，使用 Vue 開發而成的 SPA 架構使其擁有更流暢的使用體驗)
 - [Draggable Todo](https://rayc.dev/projects/query?repo=draggable-todoList) (歷經數十個版本的迭代開發、絕對好用的 Chrome Extension；除了別於一般待辦清單，擁有任務拖曳和 Markdown Link 語法支持的功能，甚至可以從中享受到彩蛋動畫特效，以及讓你成就感滿滿的《薩爾達：荒野之息》經典音效)
 
