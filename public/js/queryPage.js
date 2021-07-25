@@ -85,62 +85,64 @@ async function endLoading(delay = 0) {
   });
 }
 
-function redirectToNotFound() {
-  window.location = '/404';
+async function renderPage() {
+  let currentUrl = window.location.href;
+  const path = window.location.pathname;
+  const paramsObj = getParamsByUrl(currentUrl); // url/?repo=raychang-space
+
+  if (paramsObj.repo) return renderGithubPage(paramsObj);
+  if (paramsObj.md) return renderMarkdownPage(path, paramsObj);
+
+  const lastCharacterOfCurrentUrl = currentUrl.split('').reverse().join('')[0];
+  if (lastCharacterOfCurrentUrl !== '/') currentUrl += '/';
+
+  const splitPathArray = path.split('/');
+  const currentFolder = splitPathArray[splitPathArray.length - 2];
+
+  renderMarkdownPage(path, {
+    md: currentFolder,
+    highlight: currentFolder === 'about' ? 'false' : 'true'
+  });
 }
 
-// /projects/query?repo=raychang-space&align=justify
-// /projects/query.html?repo=raychang-space&align=justify
-// /projects/query/?repo=raychang-space&align=justify
-async function renderPage() {
-  const isAboutPage = window.location.pathname.includes('/about');
+async function renderGithubPage(paramsObj) {
+  let { repo, author, branch, path, md, align } = paramsObj;
 
-  if (isAboutPage) {
-    const markdownFile = '/about/rayc_resume.md'
-    const markdownText = await getMarkdownText(markdownFile);
-    return renderContent(markdownText, 'justify', false);
-  }
-
-  const currentUrl = window.location.href;
-  let { repo, author, branch, path, md, align } = getParamsByUrl(currentUrl);
-  if (!repo) return redirectToNotFound();
-
-  // Init query params
   author = author || 'rayc2045';
   branch = branch || 'master';
   path = path || '';
   md = md || 'README';
-  align = align || 'left';
-  // console.log({ repo, author, branch, path, md, align });
+  align = align || 'justify';
 
-  const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
-  const markdownText = await getMarkdownText(markdownFile);
-  const splitMdTextArray = markdownText.split('/');
-
-  if (
-    markdownText === '404: Not Found' ||
-    splitMdTextArray[splitMdTextArray.length - 1] === `${md}.md`
-  )
-    return redirectToNotFound();
-
-  renderContent(markdownText, align);
-  document.title = document.querySelector('h1').textContent;
+  try {
+    const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
+    await renderContent(markdownFile, align);
+    document.title = document.querySelector('h1').textContent;
+  } catch (error) {
+    // console.log(error)
+    redirectToNotFound();
+  }
 }
 
-// Get query string
-function getParamsByUrl(url) {
-  const urlSearch = url.split('?')[1];
-  const urlSearchParams = new URLSearchParams(urlSearch);
-  return Object.fromEntries(urlSearchParams.entries());
+async function renderMarkdownPage(path, paramsObj) {
+  let { md, align, highlight } = paramsObj;
+
+  if (md) md = md.replaceAll('/', '');
+  align = align || 'justify';
+  highlight = highlight || 'true';
+
+  try {
+    await renderContent(`${path}${md}.md`, align, highlight);
+    document.title = document.querySelector('h1').textContent;
+  } catch (error) {
+    // console.log(error)
+    redirectToNotFound();
+  }
 }
 
-async function getMarkdownText(url) {
-  const res = await fetch(url);
-  return await res.text();
-}
-
-function renderContent(markdownText, align, highlight = true) {
+async function renderContent(markdownFile, align = 'justify', highlight = 'true') {
   const markdownit = window.markdownit();
+  const markdownText = await getMarkdownText(markdownFile);
 
   // Hide comment
   contentEl.innerHTML = markdownit.render(markdownText)
@@ -148,10 +150,10 @@ function renderContent(markdownText, align, highlight = true) {
     .replaceAll(` --&gt;`, '</div>');
   
   // highlight.js
-  if (highlight) hljs.highlightAll();
+  if (highlight === 'true') hljs.highlightAll();
 
   // Set paragraph text align to justify or not
-  if (align === 'justify') contentEl.querySelectorAll('p').forEach(p => p.style = 'text-align: justify');
+  contentEl.querySelectorAll('p').forEach(p => p.classList.add(align));
 
   // Set anchor open in blank
   contentEl.querySelectorAll('a').forEach(a => {
@@ -166,6 +168,22 @@ function renderContent(markdownText, align, highlight = true) {
     if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
     if (c) img.classList.add(c);
   });
+}
+
+// Get query string
+function getParamsByUrl(url) {
+  const urlSearch = url.split('?')[1];
+  const urlSearchParams = new URLSearchParams(urlSearch);
+  return Object.fromEntries(urlSearchParams.entries());
+}
+
+async function getMarkdownText(markdownFile) {
+  const res = await fetch(markdownFile);
+  return await res.text();
+}
+
+function redirectToNotFound() {
+  window.location = '/404';
 }
 
 function activateHoverInteraction(els) {
