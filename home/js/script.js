@@ -205,7 +205,7 @@ async function updateWorks() {
           <div class="number">${formatNumber(works.length - idx)}</div>
           <div class="title">${work.title}</div>
           <div class="subtitle">${work.subtitle}${work.repo
-            ? ` (<a class="info" href="${`/projects/query?repo=${work.repo}${work.align !== 'justify' ? `&align=${work.align}` : ''}`}">info</a>)`
+            ? ` (<a class="info" href="${`/projects/?repo=${work.repo}${work.align !== 'justify' ? `&align=${work.align}` : ''}`}">info</a>)`
             : ''}
           </div>
         </section>
