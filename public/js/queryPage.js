@@ -117,7 +117,8 @@ async function renderGithubPage(paramsObj) {
   try {
     const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
     await renderContent(markdownFile, align);
-    document.title = document.querySelector('h1').textContent;
+    const titleEl = document.querySelector('h1');
+    if (titleEl) document.title = titleEl.textContent;
   } catch (error) {
     // console.log(error)
     redirectToNotFound();
@@ -133,7 +134,8 @@ async function renderMarkdownPage(path, paramsObj) {
 
   try {
     await renderContent(`${path}${md}.md`, align, highlight);
-    document.title = document.querySelector('h1').textContent;
+    const titleEl = document.querySelector('h1');
+    if (titleEl) document.title = titleEl.textContent;
   } catch (error) {
     // console.log(error)
     redirectToNotFound();
