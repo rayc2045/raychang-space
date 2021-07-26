@@ -15,7 +15,7 @@
 - 為首頁作品區塊加上三層互動效果：(1) 捲動頁面時，將畫面中間的作品封面加上灰階轉彩色的漸變效果；(2) 鼠標碰觸作品封面時 (非觸控設備)，將作品封面暗化的效果；(3) 結合以上兩者，當鼠標碰觸畫面中間以外的作品時 (非觸控設備)，碰觸的作品封面轉為彩色加上暗化，並將畫面中間的作品封面轉為灰階，呈現焦點切換的互動
 - 首頁底部連絡表單的設計上，加入填寫表單時的打字音效和送出表單、進行驗證卻格式不如預期時，加入頗有趣味的提示動畫，使無聊的表單填寫變得有聲有色；另外，在 Message 區塊中，達到讓 `Textarea` 能隨著文字量做擴展或內縮的自適應，以及實現在表單提交、捲動頁面離開感謝視窗後，自動換回連絡表單的復原設計
 - [About 頁面](https://rayc.dev/about) 設計上，以全大寫英文配上中文的標題呈現方正、整齊的風格；履歷以帶有紋路的象牙紙為底，使用深灰而非純黑字提升閱讀上的體驗
-- [404 Not Found 頁面](https://rayc.dev/404) 設計上，使用 [Kit8 付費插畫](https://kit8.net/illustrations/web-online-page-with-404-not-found-error/) 後製陰影並搭配 [Nunito 字體](https://fonts.google.com/specimen/Nunito?preview.text_type=custom/) 和噪點填充背景，取代原先伺服器預設的 404 頁面
+- [404 Not Found 頁面](https://rayc.dev/404) 設計上，使用 [Kit8 付費插畫](https://kit8.net/illustrations/web-online-page-with-404-not-found-error/) 後製陰影並搭配 [Nunito 字體](https://fonts.google.com/specimen/Nunito?preview.text_type=custom/) 和噪點填充背景，取代原先伺服器 [預設的 404 頁面](https://rayc2045.github.io/vanilla-calculator/404)
 
 ### 開發紀錄
 - 購買並使用 [Google Domains](https://domains.google.com/) 網域名稱：rayc.dev
