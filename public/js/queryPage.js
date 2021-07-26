@@ -161,14 +161,13 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
     a.rel = 'noreferrer noopener';
   });
 
-  // Optimize image quality and add class if param "c"
+  // Optimize image style
   contentEl.querySelectorAll('img').forEach(img => {
-    const { s, c } = getParamsByUrl(img.src);
+    const { s, width, align, c } = getParamsByUrl(img.src);
     const magnifyScale = 1.5;
-    if (s) {
-      img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
-      // img.style = `width: ${s * magnifyScale}px;`;
-    }
+    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
+    if (width) img.style = `width: ${width * magnifyScale}px;`;
+    if (align) img.closest('p').className = align; // replace <p> original class
     if (c) img.classList.add(c);
   });
 }
