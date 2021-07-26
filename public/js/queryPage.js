@@ -14,7 +14,7 @@ document.oncontextmenu = () => false;
 disableScroll();
 
 window.onload = async() => {
-  renderPage();
+  await renderPage();
 
   if (!isTouchDevice) {
     activateHoverInteraction([contentEl]);
@@ -85,13 +85,13 @@ async function endLoading(delay = 0) {
   });
 }
 
-function renderPage() {
+async function renderPage() {
   let currentUrl = window.location.href;
   const path = window.location.pathname;
   const paramsObj = getParamsByUrl(currentUrl); // about/?md=about&highlight=false
 
-  if (paramsObj.repo) return renderGithubPage(paramsObj);
-  if (paramsObj.md) return renderMarkdownPage(path, paramsObj);
+  if (paramsObj.repo) return await renderGithubPage(paramsObj);
+  if (paramsObj.md) return await renderMarkdownPage(path, paramsObj);
 
   const lastCharacterOfCurrentUrl = currentUrl.split('').reverse().join('')[0];
   if (lastCharacterOfCurrentUrl !== '/') currentUrl += '/';
@@ -99,7 +99,7 @@ function renderPage() {
   const splitPathArray = path.split('/');
   const currentFolder = splitPathArray[splitPathArray.length - 2];
 
-  renderMarkdownPage(path, {
+  await renderMarkdownPage(path, {
     md: currentFolder,
     highlight: currentFolder === 'about' ? 'false' : 'true'
   });
@@ -152,16 +152,13 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
   // highlight.js
   if (highlight === 'true') hljs.highlightAll();
 
-  // Set paragraph text align to justify or not
   contentEl.querySelectorAll('p').forEach(p => p.classList.add(align));
-
-  // Set anchor open in blank
   contentEl.querySelectorAll('a').forEach(a => {
     a.target = '_blank';
     a.rel = 'noreferrer noopener';
   });
 
-  // Init img size and class
+  // Optimize image quality and add class if param "c"
   contentEl.querySelectorAll('img').forEach(img => {
     const { s, c } = getParamsByUrl(img.src);
     const magnifyScale = 1.5;
