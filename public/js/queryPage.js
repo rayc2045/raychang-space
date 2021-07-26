@@ -144,10 +144,11 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
   const markdownit = window.markdownit();
   const markdownText = await getMarkdownText(markdownFile);
 
-  // Hide comment
   contentEl.innerHTML = markdownit.render(markdownText)
-    .replaceAll(`&lt;!-- `, '<div style="display:none;"')
-    .replaceAll(` --&gt;`, '</div>');
+    .replaceAll('&lt;!-- ', '<div style="display:none;"') // Hide comment
+    .replaceAll(' --&gt;', '</div>')
+    .replaceAll('[ ]', '<span class="checkbox">☐</span>') // Checkbox
+    .replaceAll('[x]', '<span class="checkbox check">☑︎</span>');
   
   // highlight.js
   if (highlight === 'true') hljs.highlightAll();
@@ -162,7 +163,10 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
   contentEl.querySelectorAll('img').forEach(img => {
     const { s, c } = getParamsByUrl(img.src);
     const magnifyScale = 1.5;
-    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
+    if (s) {
+      img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
+      // img.style = `width: ${s * magnifyScale}px;`;
+    }
     if (c) img.classList.add(c);
   });
 }
