@@ -128,6 +128,7 @@ async function renderGithubPage(paramsObj) {
 async function renderMarkdownPage(path, paramsObj) {
   let { md, align, highlight } = paramsObj;
 
+  if (md) md = md.replaceAll('/', '');
   align = align || 'justify';
   highlight = highlight || 'true';
 
