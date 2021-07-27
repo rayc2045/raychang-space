@@ -128,12 +128,12 @@ async function renderGithubPage(paramsObj) {
 async function renderMarkdownPage(path, paramsObj) {
   let { md, align, highlight } = paramsObj;
 
-  if (md) md = md.replaceAll('/', '');
   align = align || 'justify';
   highlight = highlight || 'true';
 
   try {
     await renderContent(`${path}${md}.md`, align, highlight);
+    if (md === 'about') return;
     const titleEl = document.querySelector('h1');
     if (titleEl) document.title = titleEl.textContent;
   } catch (error) {
