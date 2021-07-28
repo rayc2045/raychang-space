@@ -117,8 +117,9 @@ async function renderGithubPage(paramsObj) {
   try {
     const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
     await renderContent(markdownFile, align);
-    const titleEl = document.querySelector('h1');
-    if (titleEl) document.title = titleEl.textContent;
+    const title = contentEl.querySelector('h1').textContent;
+    updateSiteTitle(title);
+    appendGithubLink(title, author, repo);
   } catch (error) {
     // console.log(error)
     redirectToNotFound();
@@ -135,8 +136,8 @@ async function renderMarkdownPage(path, paramsObj) {
   try {
     await renderContent(`${path}${md}.md`, align, highlight);
     if (md === 'about') return;
-    const titleEl = document.querySelector('h1');
-    if (titleEl) document.title = titleEl.textContent;
+    const title = contentEl.querySelector('h1').textContent;
+    updateSiteTitle(title);
   } catch (error) {
     // console.log(error)
     redirectToNotFound();
@@ -184,6 +185,22 @@ function getParamsByUrl(url) {
 async function getMarkdownText(markdownFile) {
   const res = await fetch(markdownFile);
   return await res.text();
+}
+
+function updateSiteTitle(headerText) {
+  if (headerText) document.title = headerText;
+}
+
+function appendGithubLink(headerText, author, repo) {
+  contentEl.querySelectorAll('a').forEach(a => {
+    const aText = a.textContent;
+    if (
+      aText[0] + aText[1] === '> ' &&
+      headerText.includes(aText.replace('> ', ''))
+    ) {
+      a.parentElement.innerHTML = a.parentElement.innerHTML + ` / <a href="https://github.com/${author}/${repo}" target="_blank" rel="noreferrer noopener">Github Repo</a>`;
+    }
+  });
 }
 
 function redirectToNotFound() {
