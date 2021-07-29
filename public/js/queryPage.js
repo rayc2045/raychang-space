@@ -156,9 +156,9 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
   // Optimize image style
   contentEl.querySelectorAll('img').forEach(img => {
     const { s, width, align, c } = getParamsByUrl(img.src);
-    const magnifyScale = 1.5;
-    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnifyScale}`);
-    if (width) img.style = `width: ${width * magnifyScale}px;`;
+    const magnification = 1.5;
+    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnification}`);
+    if (width) img.style.width = width * magnification + 'px';
     if (align) img.closest('p').className = align; // replace <p> original class
     if (c) img.classList.add(c);
   });
@@ -177,6 +177,10 @@ async function getMarkdownText(markdownFile) {
   redirectToNotFound();
 }
 
+function redirectToNotFound() {
+  window.location = '/404';
+}
+
 function updateSiteTitle(headerText) {
   if (headerText) document.title = headerText;
 }
@@ -191,10 +195,6 @@ function appendGithubLink(headerText, author, repo) {
       a.parentElement.innerHTML = a.parentElement.innerHTML + ` / <a href="https://github.com/${author}/${repo}" target="_blank" rel="noreferrer noopener">Github Repo</a>`;
     }
   });
-}
-
-function redirectToNotFound() {
-  window.location = '/404';
 }
 
 function activateHoverInteraction(els) {
