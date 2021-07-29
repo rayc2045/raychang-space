@@ -114,16 +114,11 @@ async function renderGithubPage(paramsObj) {
   md = md || 'README';
   align = align || 'justify';
 
-  try {
-    const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
-    await renderContent(markdownFile, align);
-    const title = contentEl.querySelector('h1').textContent;
-    updateSiteTitle(title);
-    appendGithubLink(title, author, repo);
-  } catch (error) {
-    // console.log(error)
-    redirectToNotFound();
-  }
+  const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
+  await renderContent(markdownFile, align);
+  const title = contentEl.querySelector('h1').textContent;
+  updateSiteTitle(title);
+  appendGithubLink(title, author, repo);
 }
 
 async function renderMarkdownPage(path, paramsObj) {
@@ -133,21 +128,15 @@ async function renderMarkdownPage(path, paramsObj) {
   align = align || 'justify';
   highlight = highlight || 'true';
 
-  try {
-    await renderContent(`${path}${md}.md`, align, highlight);
-    if (md === 'about') return;
-    const title = contentEl.querySelector('h1').textContent;
-    updateSiteTitle(title);
-  } catch (error) {
-    // console.log(error)
-    redirectToNotFound();
-  }
+  await renderContent(`${path}${md}.md`, align, highlight);
+  if (md === 'about') return;
+  const title = contentEl.querySelector('h1').textContent;
+  updateSiteTitle(title);
 }
 
 async function renderContent(markdownFile, align = 'justify', highlight = 'true') {
   const markdownit = window.markdownit();
   const markdownText = await getMarkdownText(markdownFile);
-  if (markdownText === '404: Not Found') return redirectToNotFound();
 
   contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll('&lt;!-- ', '<div style="display:none;"') // Hide comment
@@ -184,7 +173,8 @@ function getParamsByUrl(url) {
 
 async function getMarkdownText(markdownFile) {
   const res = await fetch(markdownFile);
-  return await res.text();
+  if (res.ok) return await res.text();
+  redirectToNotFound();
 }
 
 function updateSiteTitle(headerText) {
