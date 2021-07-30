@@ -135,10 +135,10 @@ async function renderMarkdownPage(path, paramsObj) {
 }
 
 async function renderContent(markdownFile, align = 'justify', highlight = 'true') {
-  const markdownit = window.markdownit();
   const markdownText = await getMarkdownText(markdownFile);
   if (!markdownText) return redirectToNotFound();
 
+  const markdownit = window.markdownit();
   contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll('&lt;!-- ', '<div style="display:none;"') // Hide comment
     .replaceAll(' --&gt;', '</div>')
