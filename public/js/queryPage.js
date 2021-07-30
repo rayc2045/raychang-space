@@ -137,6 +137,7 @@ async function renderMarkdownPage(path, paramsObj) {
 async function renderContent(markdownFile, align = 'justify', highlight = 'true') {
   const markdownit = window.markdownit();
   const markdownText = await getMarkdownText(markdownFile);
+  if (!markdownText) return redirectToNotFound();
 
   contentEl.innerHTML = markdownit.render(markdownText)
     .replaceAll('&lt;!-- ', '<div style="display:none;"') // Hide comment
@@ -174,7 +175,7 @@ function getParamsByUrl(url) {
 async function getMarkdownText(markdownFile) {
   const res = await fetch(markdownFile);
   if (res.ok) return await res.text();
-  redirectToNotFound();
+  return '';
 }
 
 function redirectToNotFound() {
