@@ -82,10 +82,11 @@ window.onscroll = () => {
 };
 
 window.onresize = () => {
-  if (!isTouchDevice) resetParallax();
   initBodyParams();
-  const workEls = worksEl.querySelectorAll('.work');
-  scrollToggleClass(workEls, 'color');
+  killScrollTriggers();
+  if (!isTouchDevice) parallax();
+  const coverEls = worksEl.querySelectorAll('.work > a');
+  scrollToggleClass(coverEls, 'color');
 };
 
 document.onfullscreenchange = () => initBodyParams();
@@ -283,10 +284,8 @@ function parallax() {
   gsapWithScrollTrigger('.name', { y: -500 * screenScale });
 }
 
-function resetParallax() {
-  initBodyParams();
-  ScrollTrigger.getAll().forEach(el => el.kill()); // Reset parallax
-  parallax();
+function killScrollTriggers() {
+  ScrollTrigger.getAll().forEach(el => el.kill());
 }
 
 function gsapWithScrollTrigger(className, animation, scrub = 1) {
