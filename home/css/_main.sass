@@ -160,12 +160,13 @@ main
   margin-bottom: $gapSize / 2
   border-bottom: 0.1rem solid $mediumGrey
   &.hover-interaction
-    .work a
-      filter: grayscale(1)
-      background-color: $lightGrey
-      &:hover
-        filter: grayscale(0) brightness(0.9)
+    .work
+      a
+        background-color: $lightGrey
+        filter: grayscale(1)
+      a:hover
         background-color: $lightGrey2
+        filter: grayscale(0) brightness(0.9)
         // img
         //   transform: scale(1.015)
         //   transform-origin: 50% 50%
@@ -190,13 +191,13 @@ main
       filter: grayscale(100%)
       overflow: hidden
       cursor: url('/public/assets/img/original/arrow.svg') 50 50, pointer
-      transition: filter 0.75s, background-color 0.75s
-      &.color
-        background-color: $lightGrey2
-        filter: grayscale(0%)
+      transition: filter 0.75s, background-color 0.75s // Bgc transition seems not smooth on mobile
       &.grayscale
         background-color: $lightGrey
-        filter: grayscale(100%)
+        filter: grayscale(1)
+      &.color
+        background-color: $lightGrey2
+        filter: grayscale(0)
     // img
     //   transition: transform 0.5s
     section
