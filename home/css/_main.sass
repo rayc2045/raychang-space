@@ -167,9 +167,6 @@ main
       a:hover
         background-color: $lightGrey2
         filter: grayscale(0) brightness(0.9)
-        // img
-        //   transform: scale(1.015)
-        //   transform-origin: 50% 50%
   .work
     margin-bottom: $gapSize
     list-style: none
@@ -191,15 +188,13 @@ main
       filter: grayscale(100%)
       overflow: hidden
       cursor: url('/public/assets/img/original/arrow.svg') 50 50, pointer
-      transition: filter 0.75s, background-color 0.75s // Bgc transition seems not smooth on mobile
+      transition: filter 0.75s, background-color 0.75s
       &.grayscale
         background-color: $lightGrey
         filter: grayscale(1)
       &.color
         background-color: $lightGrey2
         filter: grayscale(0)
-    // img
-    //   transition: transform 0.5s
     section
       margin-left: auto
       margin-top: 3.04rem
