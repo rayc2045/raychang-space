@@ -2,7 +2,7 @@
 
 [> 閱讀 PDF](https://rayc.dev/about/rayc_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=125)
 
-![Photo](https://avatars.githubusercontent.com/u/39514595?s=260&c=avatar)
+![Avatar](https://avatars.githubusercontent.com/u/39514595?s=260&c=avatar)
 
 ### 簡介 SUMMARY
 本名張庭睿，或者直接叫我 Ray。居住於台北市，熱衷網站開發和設計，認為兩者相輔相臣，致力於做到開發如同揮劍一般優雅；做出功能完善、賞心悅目的網站，是我最有成就感的時候。
@@ -22,6 +22,8 @@
 - 懂得 API 串接與 Git 版本控制，以及使用 Vite/Vue CLI 進行專案開發和打包。
 - 懂得網站優化，例如在個人網站中使用 WebP/WebM 格式呈現網站資源，並搭配 Lazy loading 延遲載入等技術，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
 - 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 伺服器端渲染網站。
+
+<!-- ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rayc2045&hide=html&width=370) -->
 
 ### 代表作品 WORKS
 - [Ray Chang Space](https://rayc.dev/projects/?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過自定義連結，渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
