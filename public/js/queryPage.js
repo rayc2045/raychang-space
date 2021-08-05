@@ -158,7 +158,7 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
   contentEl.querySelectorAll('img').forEach(img => {
     const { s, width, align, c } = getParamsByUrl(img.src);
     const magnification = 1.5;
-    if (s) img.src = img.src.replace(`?s=${s}`, `?s=${s * magnification}`);
+    if (s) img.src = img.src.replace(`s=${s}`, `s=${s * magnification}`);
     if (width) img.style.width = width * magnification + 'px';
     if (align) img.closest('p').className = align; // replace <p> original class
     if (c) img.classList.add(c);
