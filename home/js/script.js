@@ -64,7 +64,8 @@ window.onload = async() => {
     });
 
     parallax();
-    smoothScroll();
+    // smoothScroll();
+
     // Test async/await
     // await new Promise(resolve => setTimeout(resolve, 10000));
     await endLoading(0.25);
@@ -295,15 +296,15 @@ function gsapWithScrollTrigger(className, animation, scrub = 1) {
   });
 }
 
-function smoothScroll() {
-  viewportEl.classList.add('SmoothScroll');
+// function smoothScroll() {
+//   viewportEl.classList.add('SmoothScroll');
 
-  new SmoothScroll({
-    target: containerEl,
-    scrollEase: 0.08,
-    maxOffset: 500,
-  });
-}
+//   new SmoothScroll({
+//     target: containerEl,
+//     scrollEase: 0.08,
+//     maxOffset: 500,
+//   });
+// }
 
 function appendCircle(e, el, duration = 1.5) {
   const circle = document.createElement('div');
