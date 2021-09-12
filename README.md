@@ -24,7 +24,7 @@
 - 使用 `@font-face` + `font-display: swap` 方式加載自託管 (self-hosted) 字體，減少網頁請求數、加快字體載入速度
 - 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，檔案大小減少 82%！並使用 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/) 延遲載入技術，進一步提升網頁載入速度達 2.85 倍
 - 使用雙層 `setTimeout` 定時器配上秒數校準計算，達成精準的整點 (00:00:00) 日期更新
-- 使用 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 套件達成平滑滾動，讓使用滑鼠捲動網頁時，就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 和 [ScrollTrigger](https://greensock.com/scrolltrigger/) 套件對複數元素做滾動視差，實現網站的立體感<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
+- 使用 [GSAP](https://greensock.com/gsap/) 和 [ScrollTrigger](https://greensock.com/scrolltrigger/) 套件對複數元素做滾動視差，實現網站的立體感<!-- 使用 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 套件達成平滑滾動，讓使用滑鼠捲動網頁時，就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 和 [ScrollTrigger](https://greensock.com/scrolltrigger/) 套件對複數元素做滾動視差，實現網站的立體感 - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
 - 為展示的作品封面加上鼠標碰觸和捲動頁面時，讓到達畫面中間的作品呈現灰階轉彩色的互動效果 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) ，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
 - 針對使用者設備做互動效果優化，使用非觸控設備開啟網頁才會加入滑鼠碰觸元素的互動效果，如首頁作品封面的灰階轉彩色效果，以及在 About 頁面中，鼠標碰觸超連結時顯示的底線
 - 善用 JavaScript `Async/Await` 語法排程管理同步與非同步程式碼，使抓取資料、頁面渲染完畢到 Loading 動畫結束的過程始終穩定流暢
