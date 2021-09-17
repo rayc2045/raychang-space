@@ -108,8 +108,9 @@ document.onmouseup = e => {
 };
 
 document.oncontextmenu = e => {
+  e.preventDefault();
   if (e.target.hasAttribute('href')) return false;
-  showMenu(e);
+  if (!isTouchDevice) showMenu(e);
 };
 
 containerEl.onmousedown = e => {
@@ -460,8 +461,6 @@ function hideEl(el) {
 }
 
 function showMenu(e) {
-  e.preventDefault();
-  if (isTouchDevice) return;
   menuEl.classList.remove('hide');
 
   const windowWidth = window.innerWidth;

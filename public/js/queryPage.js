@@ -51,8 +51,9 @@ document.onmouseup = e => {
 };
 
 document.oncontextmenu = e => {
+  e.preventDefault();
   if (e.target.hasAttribute('href')) return false;
-  showMenu(e);
+  if (!isTouchDevice) showMenu(e);
 };
 
 containerEl.onmousedown = e => {
@@ -229,8 +230,6 @@ function appendCircle(e, element, duration = 1.5) {
 }
 
 function showMenu(e) {
-  e.preventDefault();
-  if (isTouchDevice) return;
   menuEl.classList.remove('hide');
 
   const windowWidth = window.innerWidth;
