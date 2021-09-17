@@ -230,6 +230,7 @@ function appendCircle(e, element, duration = 1.5) {
 
 function showMenu(e) {
   e.preventDefault();
+  if (isTouchDevice) return;
   menuEl.classList.remove('hide');
 
   const windowWidth = window.innerWidth;
