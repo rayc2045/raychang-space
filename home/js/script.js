@@ -2,6 +2,7 @@
 
 const loadingEl = document.querySelector('.loading');
 const loadingAnimationEl = loadingEl.querySelector('.loading-animation');
+const menuEl = document.querySelector('.menu');
 
 const viewportEl = document.querySelector('.viewport');
 const containerEl = viewportEl.querySelector('.container');
@@ -78,11 +79,13 @@ window.onload = async() => {
 };
 
 window.onscroll = () => {
+  hideEl(menuEl);
   if (!sayHelloEl.classList.contains('hide')) return;
   if (!isVisible(appreciationEl)) putPackForm();
 };
 
 window.onresize = () => {
+  hideEl(menuEl);
   initBodyParams();
   killScrollTriggers();
   if (!isTouchDevice) parallax();
@@ -92,15 +95,25 @@ window.onresize = () => {
 
 document.onfullscreenchange = () => initBodyParams();
 
+document.onmousedown = e => {
+  if (!e.target.hasAttribute('href')) hideEl(menuEl);
+};
+
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
     playAudio(pagingSound);
+    hideEl(menuEl);
     if (e.which === 3) window.open(e.target.href, '_blank');
   }
 };
 
+document.oncontextmenu = e => {
+  if (e.target.hasAttribute('href')) return false;
+  showMenu(e);
+};
+
 containerEl.onmousedown = e => {
-  appendCircle(e, containerEl);
+  if (e.which === 1) appendCircle(e, containerEl);
 };
 
 contactButton.onmouseup = () => {
@@ -440,6 +453,33 @@ function isVisible(el) {
 
 function removeElement(el) {
   el.parentNode.removeChild(el);
+}
+
+function hideEl(el) {
+  el.classList.add('hide');
+}
+
+function showMenu(e) {
+  e.preventDefault();
+  if (isTouchDevice) return;
+  menuEl.classList.remove('hide');
+
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const menuWidth = menuEl.getBoundingClientRect().width;
+  const menuHeight = menuEl.getBoundingClientRect().height;
+  const offset = 5;
+  let menuPosX = `${e.clientX + offset}px`;
+  let menuPosY = `${e.clientY + offset}px`;
+
+  if (e.clientX + offset + menuWidth > windowWidth)
+    menuPosX = `${e.clientX - offset - menuWidth}px`;
+  
+  if (e.clientY + offset + menuHeight > windowHeight)
+    menuPosY = `${e.clientY - offset - menuHeight}px`;
+
+  menuEl.style.left = menuPosX;
+  menuEl.style.top = menuPosY;
 }
 
 function playAudio(audio, volume = 1) {
