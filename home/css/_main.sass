@@ -73,13 +73,11 @@ nav
   +flexLeft
   section
     +flexLeft
-    .line
-      margin-left: 1.04rem
-      margin-top: 0.1rem
-      width: 11rem
-      border-bottom: 0.1rem solid $black
-  .about, .contact
-    z-index: 999
+  .line
+    margin-left: 1.04rem
+    margin-top: 0.1rem
+    width: 11rem
+    border-bottom: 0.1rem solid $black
   .about
     margin-left: auto
     margin-right: 2.49rem
@@ -95,6 +93,7 @@ main
     top: - $mainElOffset - 0.5rem
   [class^="circle"]
     position: absolute
+    z-index: -1
     border-radius: 50%
     background-image: $noiseIntense
   .circle-yellow
