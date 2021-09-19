@@ -32,6 +32,7 @@ body
   position: relative
   color: $black
   background-color: $white
+  overflow-x: hidden // Prevent anything make scrollbar show
 
 a, .contact, .to-top
   font-size: 1rem
@@ -88,12 +89,12 @@ main
   height: 47.5rem + $mainElOffset
   position: relative
   top: - $mainElOffset - 0.5rem
+  z-index: -1
   overflow: hidden
   +iPad
     top: - $mainElOffset - 0.5rem
   [class^="circle"]
     position: absolute
-    z-index: -1
     border-radius: 50%
     background-image: $noiseIntense
   .circle-yellow
