@@ -195,7 +195,7 @@ function appendGithubLink(headerText, author, repo) {
       aText[0] + aText[1] === '> ' &&
       headerText.includes(aText.replace('> ', ''))
     ) {
-      a.parentElement.innerHTML = a.parentElement.innerHTML + ` / <a href="https://github.com/${author}/${repo}" target="_blank" rel="noreferrer noopener">Github Repo</a>`;
+      a.parentElement.innerHTML = a.parentElement.innerHTML + ` / <a href="https://github.com/${author}/${repo}" target="_blank" rel="noreferrer noopener">GitHub Repo</a>`;
     }
   });
 }
