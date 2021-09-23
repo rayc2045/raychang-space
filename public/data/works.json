@@ -15,7 +15,7 @@
   },
   {
     "title": "Ghibli Gallery",
-    "subtitle": "Remaster studio Ghibli's work album with Vue 3.0",
+    "subtitle": "Redesign studio Ghibli's work album with Vue 3.0",
     "repo": "ghibli-gallery",
     "align": "justify",
     "link": "https://rayc2045.github.io/ghibli-gallery/"
