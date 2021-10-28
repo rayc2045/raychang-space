@@ -144,7 +144,8 @@ textareaEls.forEach(el => {
 });
 
 sendButton.onclick = e => {
-  submitForm(e);
+  e.preventDefault();
+  submitForm();
   resizeBodyHeight();
 };
 
@@ -370,8 +371,7 @@ function autoExpand(el) {
   el.style.height = el.scrollHeight + offset + 'px';
 }
 
-function submitForm(e) {
-  e.preventDefault();
+function submitForm() {
   isValidated = true;
   checkForm();
   if (!isValidated) return false;
