@@ -1,5 +1,12 @@
 [
   {
+    "title": "HTML Reserved Colors",
+    "subtitle": "Pick colors you like with one click",
+    "repo": "html-reserved-colors",
+    "align": "justify",
+    "link": "https://color-names.netlify.app/"
+  },
+  {
     "title": "Horizontal Scrolling Theater",
     "subtitle": "Enjoy the online movie shopping",
     "repo": "horizontal-scrolling-theater",
@@ -12,13 +19,6 @@
     "repo": "ghibli-crawler",
     "align": "left",
     "link": "https://rayc.dev/projects/?repo=ghibli-crawler&align=left"
-  },
-  {
-    "title": "Ghibli Gallery",
-    "subtitle": "Redesign studio Ghibli's work album with Vue 3.0",
-    "repo": "ghibli-gallery",
-    "align": "justify",
-    "link": "https://rayc2045.github.io/ghibli-gallery/"
   },
   {
     "title": "Block Memory Game",
