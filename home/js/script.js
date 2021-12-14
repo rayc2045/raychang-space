@@ -205,7 +205,7 @@ function checkDateEveryMinute() {
 }
 
 async function updateWorks() {
-  const works = await loadData('/public/data/works.json');
+  const works = await getData('/public/data/works.json');
   let worksHTML = '';
 
   works.forEach((work, idx) => {
@@ -233,7 +233,7 @@ async function updateWorks() {
   worksEl.innerHTML = worksHTML;
 }
 
-async function loadData(api) {
+async function getData(api) {
   const res = await fetch(api);
   return await res.json();
 }
