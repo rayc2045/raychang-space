@@ -1,5 +1,6 @@
 'use strict';
 
+const snowCanvas = document.querySelector('#snow');
 const loadingEl = document.querySelector('.loading');
 const loadingAnimationEl = loadingEl.querySelector('.loading-animation');
 const menuEl = document.querySelector('.menu');
@@ -52,6 +53,7 @@ setTimeoutToCheckDateEveryMinute();
 
 window.onload = async() => {
   initBodyParams();
+  if (bodyWidth > 568) snowIfChristmas();
   await updateWorks();
   const coverEls = worksEl.querySelectorAll('.work > a');
   scrollToggleClass(coverEls, 'color');
@@ -89,6 +91,7 @@ window.onresize = () => {
   initBodyParams();
   killScrollTriggers();
   if (!isTouchDevice) parallax();
+  bodyWidth > 568 ? snowIfChristmas() : hideEl(snowCanvas);
   const coverEls = worksEl.querySelectorAll('.work > a');
   scrollToggleClass(coverEls, 'color');
 };
@@ -180,6 +183,12 @@ function updateDate() {
   dateEl.textContent = getFormatDate(time);
 }
 
+function snowIfChristmas() {
+  const date = `${time.getMonth() + 1}/${time.getDate()}`;
+  const isChristmas = (date === '12/24') || (date === '12/25');
+  if (isChristmas) snowCanvas.classList.remove('hide');
+}
+
 function getFormatDate(time) {
   // January 1, 2021
   return `${convertToMonth(time.getMonth() + 1)} ${time.getDate()}, ${time.getFullYear()}`;
@@ -195,12 +204,11 @@ function setTimeoutToCheckDateEveryMinute() {
 
 function checkDateEveryMinute() {
   const newTime = new Date();
-
   if (time.getDate() !== newTime.getDate()) {
     time = newTime;
     updateDate();
+    bodyWidth > 568 ? snowIfChristmas() : hideEl(snowCanvas);
   }
-
   setTimeout(checkDateEveryMinute, (60 - newTime.getSeconds()) * 1000);
 }
 
