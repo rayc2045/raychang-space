@@ -168,7 +168,7 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
 }
 
 // Get query string
-function getParamsByUrl(url) {
+function getParamsByUrl(url = window.location.href) {
   const urlSearch = url.split('?')[1];
   const urlSearchParams = new URLSearchParams(urlSearch);
   return Object.fromEntries(urlSearchParams.entries());
