@@ -53,7 +53,7 @@ setTimeoutToCheckDateEveryMinute();
 
 window.onload = async() => {
   initBodyParams();
-  if (bodyWidth > 568) snowIfChristmas();
+  if (bodyWidth > 568) snowInSnowDays();
   await updateWorks();
   const coverEls = worksEl.querySelectorAll('.work > a');
   scrollToggleClass(coverEls, 'color');
@@ -91,7 +91,7 @@ window.onresize = () => {
   initBodyParams();
   killScrollTriggers();
   if (!isTouchDevice) parallax();
-  bodyWidth > 568 ? snowIfChristmas() : hideEl(snowCanvas);
+  bodyWidth > 568 ? snowInSnowDays() : hideEl(snowCanvas);
   const coverEls = worksEl.querySelectorAll('.work > a');
   scrollToggleClass(coverEls, 'color');
 };
@@ -183,10 +183,12 @@ function updateDate() {
   dateEl.textContent = getFormatDate(time);
 }
 
-function snowIfChristmas() {
+function snowInSnowDays() {
+  const snowDays = ['2/14', '3/14', '5/20', '12/24', '12/25'];
   const date = `${time.getMonth() + 1}/${time.getDate()}`;
-  const isChristmas = (date === '12/24') || (date === '12/25');
-  if (isChristmas) snowCanvas.classList.remove('hide');
+  snowDays.forEach(snowDay => {
+    if (date === snowDay) return snowCanvas.classList.remove('hide');
+  });
 }
 
 function getFormatDate(time) {
@@ -207,7 +209,7 @@ function checkDateEveryMinute() {
   if (time.getDate() !== newTime.getDate()) {
     time = newTime;
     updateDate();
-    bodyWidth > 568 ? snowIfChristmas() : hideEl(snowCanvas);
+    bodyWidth > 568 ? snowInSnowDays() : hideEl(snowCanvas);
   }
   setTimeout(checkDateEveryMinute, (60 - newTime.getSeconds()) * 1000);
 }
