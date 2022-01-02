@@ -183,6 +183,15 @@ function updateDate() {
   dateEl.textContent = getFormatDate(time);
 }
 
+function getFormatDate(time) {
+  // January 1, 2021
+  return `${convertToMonth(time.getMonth() + 1)} ${time.getDate()}, ${time.getFullYear()}`;
+}
+
+function convertToMonth(num) {
+  return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][num - 1];
+}
+
 function snowOnSpecialDay() {
   const specialDays = ['2/14', '3/14', '5/20', '12/24', '12/25'];
   const date = `${time.getMonth() + 1}/${time.getDate()}`;
@@ -197,15 +206,6 @@ function snowOnSpecialDay() {
       }, 1000);
     }
   });
-}
-
-function getFormatDate(time) {
-  // January 1, 2021
-  return `${convertToMonth(time.getMonth() + 1)} ${time.getDate()}, ${time.getFullYear()}`;
-}
-
-function convertToMonth(num) {
-  return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][num - 1];
 }
 
 function setTimeoutToCheckDateEveryMinute() {
