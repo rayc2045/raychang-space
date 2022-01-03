@@ -195,17 +195,12 @@ function convertToMonth(num) {
 function snowOnSpecialDay() {
   const specialDays = ['2/14', '3/14', '5/20', '12/24', '12/25'];
   const date = `${time.getMonth() + 1}/${time.getDate()}`;
-
-  specialDays.forEach((specialDay, idx) => {
-    if (date === specialDay) return snowCanvas.classList.remove('hide');
-    if (idx === specialDays.length - 1) {
-      snowCanvas.style.opacity = '0';
-      setTimeout(() => {
-        hideEl(snowCanvas);
-        snowCanvas.style.opacity = '';
-      }, 1000);
-    }
-  });
+  if (specialDays.includes(date)) return snowCanvas.classList.remove('hide');
+  snowCanvas.style.opacity = '0';
+  setTimeout(() => {
+    hideEl(snowCanvas);
+    snowCanvas.style.opacity = '';
+  }, 1000);
 }
 
 function setTimeoutToCheckDateEveryMinute() {
