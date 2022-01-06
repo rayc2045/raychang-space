@@ -14,7 +14,7 @@
 - **[2016]** 畢業於華梵大學外國語文學系，在學期間撰寫過英語校刊，自創英語寫作社，考取 TOEIC 多益證書 (810)，完成東北亞第一高峰 — 玉山主峰登頂。
 
 ### 技能與開發成就 SKILLS & ACHIEVEMENTS
-- 具備專業級別的圖像處理能力，修圖、去背、調色、降解以讓圖片在網頁中有更快的載入速度，甚至使用 Machine Learning 提高圖像解析度都不是問題。
+- 具備專業級別的圖像處理能力，如修圖、去背、調色、批次處理、壓縮降解，甚至使用 Machine Learning 提高圖像解析度都不是問題。
 - 具備 UI/UX 設計概念，親手設計與實作個人網站、手刻 [精美計算機](https://rayc2045.github.io/vanilla-calculator/)。
 - 開發上做到 Pixel perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式設計](https://color-names.netlify.app/)。
 - 善用 CSS 預處理器 Sass，以及懂得使用 Tailwind 加速介面開發。
