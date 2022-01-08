@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono&display=swap')
+
+$yellow: #FFCA28
+$blue: #4461AA
+$black: #333
+
+@mixin size($w, $h:$w)
+  width: $w
+  height: $h
+
+@mixin absoluteCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin verticalCenter
+  display: flex
+  flex-direction: column
+  align-items: center
+
+*, *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  color: $black
+  user-select: none
+
+::-webkit-scrollbar
+  width: 0
+
+html, body
+  +size(100%)
+  font-size: 5vw
+  text-size-adjust: none
+
+body
+  position: relative
+  background-color: $yellow
+
+img
+  pointer-events: none
+  
+.phone
+  +absoluteCenter
+  display: none
+
+.app
+  padding: 1.4rem
+  +size(100%)
+  +absoluteCenter
+  +verticalCenter
+  background-color: $yellow
+  overflow-y: scroll
+  .avatar
+    +size(13rem)
+    img
+      +size(100%)
+  h1
+    font-family: 'Caveat', cursive
+    font-size: 2.3rem
+    letter-spacing: 0.16rem
+    margin: 0.5rem 0
+  ul
+    +verticalCenter
+    margin-bottom: 0.6rem
+    li
+      +flexCenter
+      list-style: none
+      +size(14.4rem, 2.6rem)
+      border: 0.1rem solid $black
+      margin-bottom: 0.84rem
+      &:last-child
+        margin-bottom: 0
+      a
+        font-family: 'Roboto Mono', monospace
+        font-size: 1rem
+        text-decoration: none
+        +size(100%)
+        +flexCenter
+      &:hover
+        background-color: $black
+        a
+          color: white
+  .author
+    font-family: sans-serif
+    font-size: 0.7rem
+    margin-bottom: 0.84rem
+
+// Desktop screen's orientation is portrait
+@media screen and (min-width: 1025px) // size > 1025px
+  body
+    background-color: $blue
+
+  .phone
+    display: block
+    +size(6rem, auto)
+
+  .app
+    +size(19.5rem, 34.3rem)
+    transform: scale(0.2) translate(-49rem, -87.4rem)
+    ul
+      margin-bottom: 0.3rem
