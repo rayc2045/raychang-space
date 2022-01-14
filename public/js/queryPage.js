@@ -145,7 +145,8 @@ async function renderContent(markdownFile, align = 'justify', highlight = 'true'
     .replaceAll('&lt;!-- ', '<div style="display:none;"') // Hide comment
     .replaceAll(' --&gt;', '</div>')
     .replaceAll('[ ]', '<span class="checkbox">☐</span>') // Checkbox
-    .replaceAll('[x]', '<span class="checkbox check">☑︎</span>');
+    .replaceAll('[x]', '<span class="checkbox check">☑︎</span>')
+    + contentEl.innerHTML;
   
   // highlight.js
   if (highlight === 'true') hljs.highlightAll();
