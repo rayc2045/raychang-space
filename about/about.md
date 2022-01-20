@@ -27,7 +27,7 @@
 
 ### 代表作品 WORKS
 - [Ray Chang Space](https://rayc.dev/projects/?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過在網址上加入參數，動態渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
-- [Infinite Mondrian Art](https://rayc.dev/projects/?repo=infinite-mondrian-art) (在誠品書局看到蒙德里安的周邊商品，受到啟發而做的生成式藝術，當中使用了別的手法，可無限生成不重複的蒙德里安色塊)
+- [Infinite Mondrian Art](https://rayc.dev/projects/?repo=infinite-mondrian-art) (在誠品書局看到蒙德里安的周邊商品，受到啟發而做的生成式藝術創作，當中使用了別的手法，可無限生成不重複的蒙德里安色塊)
 - [HTML Reserved Colors](https://rayc.dev/projects/?repo=html-reserved-colors) (融合新擬物風格設計，且收錄了 141 種網頁保留色的顏色參考分享/色票複製工具，無論是設計師還是工程師皆可從中受益)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/?repo=horizontal-scrolling-theater) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
 - [Ghibli Crawler](https://rayc.dev/projects/?repo=ghibli-crawler&align=left) (由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照)
@@ -37,5 +37,5 @@
 感謝你讀到了這裡，網路可以說是 21 世紀最棒的發明了，它成為了你我之間毫無阻礙的溝通橋樑，如果想再認識我多一點，或是與我聯繫，歡迎透過：
 - [GitHub](https://github.com/rayc2045) (我做過的專案和作品都放在這裡)
 - [Dribbble](https://dribbble.com/raychangdesign) (大部分放有我做專案的設計稿和截圖)
-- [Medium](https://raychangdesign.medium.com) (我寫的文章都放在這裡，不管是與開發有關，或是其他的主題)
+- [Vocus](https://vocus.cc/user/@raychang) (我寫的文章都放在這裡，不管是與開發有關，或是其他的主題)
 - [Email](mailto:rayc2045@gmail.com) (寄信與我聊聊)
