@@ -1,5 +1,12 @@
 [
   {
+    "title": "Infinite Mondrian Art",
+    "subtitle": "Generative art project made with JavaScript",
+    "repo": "infinite-mondrian-art",
+    "align": "justify",
+    "link": "https://mondrian-art.netlify.app/"
+  },
+  {
     "title": "HTML Reserved Colors",
     "subtitle": "Pick colors you like with one click",
     "repo": "html-reserved-colors",
