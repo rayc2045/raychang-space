@@ -1,7 +1,7 @@
 [
   {
     "title": "Infinite Mondrian Art",
-    "subtitle": "Generative art project made with JavaScript",
+    "subtitle": "Generative art made with JavaScript",
     "repo": "infinite-mondrian-art",
     "align": "justify",
     "link": "https://mondrian-art.netlify.app/"
