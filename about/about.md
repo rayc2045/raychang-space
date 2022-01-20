@@ -21,12 +21,13 @@
 - 熟悉 JavaScript ES6，能夠撰寫清楚明瞭、容易維護的程式碼。
 - 懂得 API 串接與 Git 版本控制，以及使用 Vite/Vue CLI 進行專案開發和打包。
 - 懂得網站優化，例如在個人網站中使用 WebP/WebM 格式呈現網站資源，並搭配 Lazy loading 延遲載入等技術，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
-- 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及使用 Nuxt 開發 SSR 伺服器端渲染網站。
+- 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由以及使用 Vuex 管理資料狀態。
 
 <!-- ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rayc2045&hide=html&width=370) -->
 
 ### 代表作品 WORKS
 - [Ray Chang Space](https://rayc.dev/projects/?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過在網址上加入參數，動態渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
+- [Infinite Mondrian Art](https://rayc.dev/projects/?repo=infinite-mondrian-art) (在誠品書局看到蒙德里安的周邊商品，受到啟發而做的生成式藝術，當中使用了別的手法，可無限生成不重複的蒙德里安色塊)
 - [HTML Reserved Colors](https://rayc.dev/projects/?repo=html-reserved-colors) (融合新擬物風格設計，且收錄了 141 種網頁保留色的顏色參考分享/色票複製工具，無論是設計師還是工程師皆可從中受益)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/?repo=horizontal-scrolling-theater) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
 - [Ghibli Crawler](https://rayc.dev/projects/?repo=ghibli-crawler&align=left) (由 Puppeteer 為基底所開發的 Node.js 爬蟲，懶人自動下載吉卜力工作室公開的 1,178 張作品劇照)
