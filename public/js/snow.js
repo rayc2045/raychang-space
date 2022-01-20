@@ -26,12 +26,13 @@
 		}
 		
 		function createParticles(count) {
-			if (count != particles.length) {
+			if (count > particles.length) {
 				particles = [];
 				for (var i = 0; i < count; i++) {
 					particles.push(new Particle());
 				}
 			}
+			// console.log(particles.length);
 		}
 				
 		function onResize() {
@@ -40,7 +41,7 @@
 			el.width = width;
 			el.height = height;
 			
-			createParticles((width * height) / 10000);
+			createParticles((width * height) / 12000);
 		}
 		
 		function updateParticles() {
