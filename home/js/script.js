@@ -435,11 +435,8 @@ function alertAnimate(el) {
 }
 
 function emptyForm() {
-  inputEls.forEach(el => el.value = '');
-  textareaEls.forEach(el => {
-    el.value = '';
-    el.style.height = 'auto';
-  });
+  formEl.reset();
+  textareaEls.forEach(el => el.style.height = 'auto');
 }
 
 function hideForm() {
