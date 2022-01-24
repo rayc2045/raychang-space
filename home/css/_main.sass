@@ -49,8 +49,7 @@ picture, img, video
   pointer-events: none
 
 .avatar img
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) // x, y, blur, color
-  border-radius: 50%
+  +avatar
 
 input, textarea, button
   appearance: none
@@ -225,8 +224,8 @@ main
   display: flex
   justify-content: center
   picture
-    width: 40%
     margin-top: 4.8rem
+    width: 40%
   section
     margin-left: 7.5rem
     width: 42.5%

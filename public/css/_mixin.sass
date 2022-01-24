@@ -1,3 +1,8 @@
+@mixin avatar
+  border-radius: 50%
+  overflow: hidden
+  box-shadow: 0 .2em .5em rgba(0, 0, 0, 0.3) // x, y, blur, color
+  
 @mixin size($w, $h:$w)
   width: $w
   height: $h
@@ -25,6 +30,12 @@
   display: flex
   flex-direction: column
   align-items: center
+
+@mixin absoluteCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
 
 @mixin fixed($l, $t)
   position: fixed
