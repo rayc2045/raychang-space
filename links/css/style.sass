@@ -1,3 +1,4 @@
+$red: #C62E41
 $yellow: #FFCA28
 $blue: #4461AA
 $white: #eee
@@ -68,13 +69,15 @@ img
     margin: 1rem 0
     font-family: 'Caveat', cursive
     font-size: 2.3em
-    letter-spacing: 0.16em
+    letter-spacing: 0.1em
   ul
     margin-bottom: 0.6em
+    width: 100%
     +verticalCenter
     li
       margin-bottom: 0.9em
-      +size(14.4em, 2.6em)
+      padding: 0.75em 0
+      width: 75%
       +flexCenter
       list-style: none
       background-color: dimgray
@@ -96,7 +99,7 @@ img
 // Desktop screen's orientation is portrait
 @media screen and (min-width: 1025px) // size > 1025px
   body
-    background-color: $blue
+    background-color: $darkBlack
 
   .phone
     display: block
