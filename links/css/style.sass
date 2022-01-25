@@ -2,6 +2,7 @@ $yellow: #FFCA28
 $blue: #4461AA
 $white: #eee
 $black: #333
+$darkBlack: #202020
 
 @mixin size($w, $h:$w)
   width: $w
@@ -40,7 +41,7 @@ html, body
 
 body
   position: relative
-  background-color: $black
+  background-color: $darkBlack
 
 img
   +size(100%)
@@ -51,14 +52,14 @@ img
   display: none
 
 .app
-  padding: 1.4rem
+  padding: 1.4em 0
   +size(100%)
   +absoluteCenter
   +verticalCenter
-  background-color: $black
+  background-color: $darkBlack
   overflow-y: scroll
   .avatar
-    +size(13rem)
+    +size(13em)
     img
       border-radius: 50%
       overflow: hidden
@@ -66,18 +67,18 @@ img
   h1
     margin: 1rem 0
     font-family: 'Caveat', cursive
-    font-size: 2.3rem
-    letter-spacing: 0.16rem
+    font-size: 2.3em
+    letter-spacing: 0.16em
   ul
-    margin-bottom: 0.6rem
+    margin-bottom: 0.6em
     +verticalCenter
     li
-      margin-bottom: 0.84rem
-      +size(14.4rem, 2.6rem)
+      margin-bottom: 0.9em
+      +size(14.4em, 2.6em)
       +flexCenter
       list-style: none
       background-color: dimgray
-      // border: 0.1rem solid $white
+      // border: 0.1em solid $white
       border-radius: 0.5em
       &:last-child
         margin-bottom: 0
@@ -85,12 +86,12 @@ img
         +size(100%)
         +flexCenter
         font-family: 'Roboto Mono', monospace
-        font-size: 1rem
+        font-size: 1em
         text-decoration: none
   .author
-    margin-bottom: 0.84rem
+    margin-bottom: 0.84em
     font-family: sans-serif
-    font-size: 0.7rem
+    font-size: 0.7em
 
 // Desktop screen's orientation is portrait
 @media screen and (min-width: 1025px) // size > 1025px
@@ -99,10 +100,10 @@ img
 
   .phone
     display: block
-    +size(6rem, auto)
+    +size(6em, auto)
 
   .app
-    +size(19.5rem, 34.3rem)
-    transform: scale(0.2) translate(-49rem, -87.4rem)
+    +size(19.5em, 34.3em)
+    transform: scale(0.2) translate(-49em, -87.4em)
     ul
-      margin-bottom: 0.3rem
+      margin-bottom: 0.3em
