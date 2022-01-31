@@ -36,6 +36,6 @@
 ### 留在最後 LAST WORDS
 感謝你讀到了這裡，網路可以說是 21 世紀最棒的發明了，它成為了你我之間毫無阻礙的溝通橋樑，如果想再認識我多一點，或是與我聯繫，歡迎透過：
 - [GitHub](https://github.com/rayc2045) (我做過的專案和作品都放在這裡)
-- [Dribbble](https://dribbble.com/raychangdesign) (大部分放有我做專案的設計稿和截圖)
+- [Dribbble](https://dribbble.com/raychangdesign) (大部分放有我對專案的設計和開發成品截圖)
 - [Vocus](https://vocus.cc/user/@raychang) (我寫的文章都放在這裡，不管是與開發有關，或是其他的主題)
 - [Email](mailto:rayc2045@gmail.com) (寄信與我聊聊)
