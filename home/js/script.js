@@ -78,6 +78,7 @@ window.onload = async() => {
 
   enableScroll();
   resizeBodyHeight();
+  await logGreeting();
 };
 
 window.onscroll = () => {
@@ -505,4 +506,22 @@ function initBodyParams() {
 
 function resizeBodyHeight() {
   document.body.style.height = viewportEl.scrollHeight + 'px';
+}
+
+async function logImage(url) {
+  const img = new Image();
+  img.src = url;
+
+  await new Promise(resolve => {
+    img.onload = () => {
+      console.log('%c ', `padding: 9vw; background: url('${url}') no-repeat; background-size: contain;`);
+      resolve();
+    };
+  });
+}
+
+async function logGreeting() {
+  const avatarUrl = 'https://avatars.githubusercontent.com/u/39514595';
+  await logImage(avatarUrl);
+  console.log(`\nHi, I'm Ray.\nWelcome to my site. 👀`);
 }
