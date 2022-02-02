@@ -169,14 +169,9 @@ async function endLoading(delay = 0) {
   await new Promise(resolve => {
     setTimeout(() => {
       loadingEl.classList.add('animated');
+      loadingEl.onanimationend = () => loadingEl.remove();
       resolve();
     }, delay * 1000);
-  });
-  await new Promise(resolve => {
-    setTimeout(() => {
-      removeElement(loadingEl);
-      resolve();
-    }, delay * 1000 + 1500);
   });
 }
 
@@ -347,7 +342,7 @@ function appendCircle(e, el, duration = 1.5) {
   circle.style.animationDuration = `${duration}s`;
 
   el.appendChild(circle);
-  setTimeout(() => removeElement(circle), duration * 1000);
+  circle.onanimationend = () => circle.remove();
 }
 
 function getCleanText(text) {
@@ -462,10 +457,6 @@ function isVisible(el) {
 // 	const elBottom = ~(-el.getBoundingClientRect().bottom);
 // 	return (elTop >= 0 && elBottom <= window.innerHeight);
 // }
-
-function removeElement(el) {
-  el.parentNode.removeChild(el);
-}
 
 function hideEl(el) {
   el.classList.add('hide');

@@ -76,14 +76,9 @@ async function endLoading(delay = 0) {
   await new Promise(resolve => {
     setTimeout(() => {
       loadingEl.classList.add('animated');
+      loadingEl.onanimationend = () => loadingEl.remove();
       resolve();
     }, delay * 1000);
-  });
-  await new Promise(resolve => {
-    setTimeout(() => {
-      removeElement(loadingEl);
-      resolve();
-    }, delay * 1000 + 1500);
   });
 }
 
@@ -227,7 +222,7 @@ function appendCircle(e, element, duration = 1.5) {
   circle.style.animationDuration = `${duration}s`;
 
   element.appendChild(circle);
-  setTimeout(() => removeElement(circle), duration * 1000);
+  circle.onanimationend = () => circle.remove();
 }
 
 function showMenu(e) {
@@ -253,10 +248,6 @@ function showMenu(e) {
 
 function hideEl(el){
   el.classList.add('hide');
-}
-
-function removeElement(el) {
-  el.parentNode.removeChild(el);
 }
 
 function playAudio(audio, volume = 1) {
