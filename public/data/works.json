@@ -1,5 +1,12 @@
 [
   {
+    "title": "Zipcy Collector",
+    "subtitle": "Automatically download 8.9k Zipcy's SuperNormal NFT images",
+    "repo": "zipcy-collector",
+    "align": "justify",
+    "link": "https://rayc.dev/projects/?repo=zipcy-collector"
+  },
+  {
     "title": "Infinite Mondrian Art",
     "subtitle": "Generative art made with JavaScript",
     "repo": "infinite-mondrian-art",
@@ -19,13 +26,6 @@
     "repo": "horizontal-scrolling-theater",
     "align": "justify",
     "link": "https://vuejs-theater.netlify.app/"
-  },
-  {
-    "title": "Ghibli Crawler",
-    "subtitle": "Automatically download 1,178 studio Ghibli's work photos",
-    "repo": "ghibli-crawler",
-    "align": "left",
-    "link": "https://rayc.dev/projects/?repo=ghibli-crawler&align=left"
   },
   {
     "title": "Block Memory Game",
