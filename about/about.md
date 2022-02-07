@@ -27,7 +27,7 @@
 
 ### 代表作品 WORKS
 - [Ray Chang Space](https://rayc.dev/projects/?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過在網址上加入參數，動態渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
-- [Zipcy Collector](https://rayc.dev/projects/?repo=zipcy-collector) (為 Zipcy SuperNormal NFT 的藝術風格感到驚艷，決心結合 Node.js 與 Puppeteer，自動下載 8,888 張高質感作品原檔，並設定為 10 分鐘換一張的電腦桌布)
+- [Zipcy Collector](https://rayc.dev/projects/?repo=zipcy-collector) (為 Zipcy SuperNormal NFT 的藝術風格感到驚艷，決心結合 Node.js 與 Puppeteer，自動下載 8,888 張高質感作品原檔，並設定為 30 分鐘換一張的電腦桌布)
 - [Infinite Mondrian Art](https://rayc.dev/projects/?repo=infinite-mondrian-art) (在誠品書局看到蒙德里安的周邊商品，受到啟發而做的生成式藝術創作，當中使用了別的手法，可無限生成不重複的蒙德里安色塊)
 - [HTML Reserved Colors](https://rayc.dev/projects/?repo=html-reserved-colors) (融合新擬物風格設計，且收錄了 141 種網頁保留色的顏色參考分享/色票複製工具，無論是設計師還是工程師皆可從中受益)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/?repo=horizontal-scrolling-theater) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
