@@ -59,7 +59,7 @@ window.onload = async() => {
   scrollToggleClass(coverEls, 'color');
 
   if (!isTouchDevice) {
-    activateHoverInteraction([worksEl, footerEl]);
+    activateHoverInteraction(worksEl, footerEl);
 
     coverEls.forEach(cover => {
       cover.onmouseenter = () => coverEls.forEach(cover => toggleGrayscale(cover));
@@ -279,7 +279,7 @@ function toggleGrayscale(el) {
   el.classList.remove('grayscale');
 }
 
-function activateHoverInteraction(els) {
+function activateHoverInteraction(...els) {
   els.forEach(el => el.classList.add('hover-interaction'));
 }
 

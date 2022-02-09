@@ -17,7 +17,7 @@ window.onload = async() => {
   await renderPage();
 
   if (!isTouchDevice) {
-    activateHoverInteraction([contentEl]);
+    activateHoverInteraction(contentEl);
     // smoothScroll();
 
     // Test async/await
@@ -196,7 +196,7 @@ function appendGithubLink(headerText, author, repo) {
   });
 }
 
-function activateHoverInteraction(els) {
+function activateHoverInteraction(...els) {
   els.forEach(el => el.classList.add('hover-interaction'));
 }
 
