@@ -224,7 +224,7 @@ async function updateWorks() {
           <picture>
             <source srcset="${`/public/assets/img/webp/${work.title.replaceAll(' ', '_')}.webp`}" type="image/webp">
             <source srcset="${`/public/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" type="image/png"> 
-            <img src="${`/public/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" loading="lazy">
+            <img src="${`/public/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" width="400" height="300" loading="lazy">
           </picture>
         </a>
         <section>
