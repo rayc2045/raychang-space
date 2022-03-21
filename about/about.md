@@ -15,7 +15,7 @@
 
 ### 技能與開發成就 SKILLS & ACHIEVEMENTS
 - 具備專業級別的圖像處理能力，如修圖、去背、調色、批次處理、保持圖像清晰的壓縮優化，甚至使用 Machine Learning 提高圖像解析度都不是問題。
-- 具備 UI/UX 設計概念，親手設計與實作個人網站、手刻 [精美計算機](https://rayc2045.github.io/vanilla-calculator/)。
+- 具備 UI/UX 設計概念，親手設計與實作個人網站、[色彩檢索網站 (HTML Reserved Colors](https://color-names.netlify.app/?colors=))。
 - 開發上做到 Pixel Perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式設計](https://color-names.netlify.app/)。
 - 善用 CSS 預處理器 Sass，以及懂得使用 Tailwind 加速介面開發。
 - 熟悉 JavaScript ES6，能夠撰寫清楚明瞭、容易維護的程式碼。
@@ -29,7 +29,7 @@
 - [Ray Chang Space](https://rayc.dev/projects/?repo=raychang-space) (加入 CMS 內容管理系統的個人網站/作品集網站，可透過在網址上加入參數，動態渲染 Markdown 文字內容的頁面；另外也在排版和互動體驗上精益求精，特屬嘔心瀝血之作)
 - [Zipcy Collector](https://rayc.dev/projects/?repo=zipcy-collector) (為 Zipcy SuperNormal NFT 的藝術風格感到驚艷，決心結合 Node.js 與 Puppeteer，自動下載 8,888 張高質感作品原檔，並設定為 30 分鐘換一張的電腦桌布)
 - [Infinite Mondrian Art](https://rayc.dev/projects/?repo=infinite-mondrian-art) (在誠品書局看到蒙德里安的周邊商品，受到啟發而做的生成式藝術創作，當中使用了別的手法，可無限生成不重複的蒙德里安色塊)
-- [HTML Reserved Colors](https://rayc.dev/projects/?repo=html-reserved-colors) (融合新擬物風格設計，且收錄了 141 種網頁保留色的顏色參考分享/色票複製工具，無論是設計師還是工程師皆可從中受益)
+- [HTML Reserved Colors](https://rayc.dev/projects/?repo=html-reserved-colors) (融合新擬物風格設計，且收錄了 141 種網頁保留色的顏色參考/色票複製工具，無論是設計師還是工程師皆可從中受益)
 - [Horizontal Scrolling Theater](https://rayc.dev/projects/?repo=horizontal-scrolling-theater) (自己製作電影 API 做串接，結合 Vue 3 與 GSAP 達成橫向捲動的電影購物頁面，最特別之處在加入或移除電影時的互動效果)
 - [Draggable Todo](https://rayc.dev/projects/?repo=draggable-todoList) (歷經數十個版本的迭代開發、絕對好用的 Chrome Extension；除了別於一般待辦清單，擁有任務拖曳和 Markdown Link 語法支持的功能，甚至可以從中享受到彩蛋動畫特效，以及讓你成就感滿滿的《薩爾達：荒野之息》經典音效)
 
