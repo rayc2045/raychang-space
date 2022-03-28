@@ -16,7 +16,7 @@
   outline: none
   appearance: none
   -webkit-touch-callout: none
-  cursor: url('/public/assets/img/webp/arrow.webp'), url('/public/assets/img/original/arrow.png'), auto
+  cursor: url('/src/assets/img/webp/arrow.webp'), url('/src/assets/img/original/arrow.png'), auto
 
 html
   font-family: 'Merriweather', serif
@@ -38,7 +38,7 @@ a, .contact, .to-top
   font-size: 1rem
   color: $black
   text-decoration: underline
-  cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
+  cursor: url('/src/assets/img/webp/hover.webp'), url('/src/assets/img/original/hover.png'), pointer
   &:color
     color: $black
   &:visited
@@ -58,11 +58,11 @@ input, textarea, button
   background-color: transparent
   font-family: 'Merriweather', serif
 button
-  cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
+  cursor: url('/src/assets/img/webp/hover.webp'), url('/src/assets/img/original/hover.png'), pointer
 
 .SmoothScroll
   position: fixed
-  
+
 .container
   padding: 3.18rem 5.6rem
   width: 100vw
@@ -186,8 +186,8 @@ main
       // background-image: $noise
       filter: grayscale(100%)
       overflow: hidden
-      // cursor: url('/public/assets/img/original/arrow.svg') 50 50, pointer
-      cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
+      // cursor: url('/src/assets/img/original/arrow.svg') 50 50, pointer
+      cursor: url('/src/assets/img/webp/hover.webp'), url('/src/assets/img/original/hover.png'), pointer
       transition: filter 0.75s, background-color 0.75s
       &.color
         background-color: $lightGrey2
@@ -214,7 +214,7 @@ main
         color: $mediumGrey
       .info
         background-color: transparent
-        cursor: url('/public/assets/img/webp/hover.webp'), url('/public/assets/img/original/hover.png'), pointer
+        cursor: url('/src/assets/img/webp/hover.webp'), url('/src/assets/img/original/hover.png'), pointer
         &:hover
           background-color: transparent
 
@@ -380,7 +380,7 @@ footer
   .design-guide
     width: 135rem
     transform: translate(-30rem, -96.7rem)
-  
+
   .works
     margin-bottom: $gapSize / 2.5
     .work, .work:nth-of-type(2n)

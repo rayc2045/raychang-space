@@ -36,9 +36,9 @@ let screenScale = 0;
 let time = new Date();
 let isValidated = false;
 
-// https://raw.githubusercontent.com/rayc2045/raychang-space/master/public/assets/audio/type.mp3
-const pagingSound = new Audio('/public/assets/audio/page.mp3');
-const typingSound = new Audio('/public/assets/audio/type.mp3');
+// https://raw.githubusercontent.com/rayc2045/raychang-space/master/src/assets/audio/type.mp3
+const pagingSound = new Audio('/src/assets/audio/page.mp3');
+const typingSound = new Audio('/src/assets/audio/type.mp3');
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////  Events  ///////////////////////////////
@@ -214,7 +214,7 @@ function checkDateEveryMinute() {
 }
 
 async function updateWorks() {
-  const works = await getData('/public/data/works.json');
+  const works = await getData('/src/data/works.json');
   let worksHTML = '';
 
   works.forEach((work, idx) => {
@@ -222,9 +222,9 @@ async function updateWorks() {
       <li class="work">
         <a href="${work.link}" target="_blank" rel="noreferrer noopener">
           <picture>
-            <source srcset="${`/public/assets/img/webp/${work.title.replaceAll(' ', '_')}.webp`}" type="image/webp">
-            <source srcset="${`/public/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" type="image/png"> 
-            <img src="${`/public/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" width="400" height="300" loading="lazy">
+            <source srcset="${`/src/assets/img/webp/${work.title.replaceAll(' ', '_')}.webp`}" type="image/webp">
+            <source srcset="${`/src/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" type="image/png">
+            <img src="${`/src/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" width="400" height="300" loading="lazy">
           </picture>
         </a>
         <section>
@@ -475,7 +475,7 @@ function showMenu(e) {
 
   if (e.clientX + offset + menuWidth > windowWidth)
     menuPosX = `${e.clientX - offset - menuWidth}px`;
-  
+
   if (e.clientY + offset + menuHeight > windowHeight)
     menuPosY = `${e.clientY - offset - menuHeight}px`;
 

@@ -1,0 +1,65 @@
+::-webkit-scrollbar
+  // width: 0.8vw
+  width: 0
+// ::-webkit-scrollbar-thumb // Handle
+//   background-color: $black
+// ::-webkit-scrollbar-track // Track
+//   background-color: transparent
+
+::selection
+  background-color: $lightGrey
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  appearance: none
+  -webkit-touch-callout: none
+  cursor: url('/src/assets/img/webp/arrow.webp'), url('/src/assets/img/original/arrow.png'), auto
+
+html
+  font-family: 'Noto Sans TC', sans-serif
+  font-size: 1vw
+  scrollbar-width: none
+  user-select: none // disable text selection and input focus
+
+body
+  color: $black
+  background-color: $white
+  cursor: url('/src/assets/img/webp/arrow.webp'), url('/src/assets/img/original/arrow.png'), auto
+  position: relative
+
+.SmoothScroll
+  position: fixed
+  left: 50%
+  transform: translateX(-50%)
+
+.container
+  width: 100vw
+  display: grid
+  place-items: center
+  background-image: $noise
+
+picture, img
+  pointer-events: none
+
+img
+  +size(100%, auto)
+
+.avatar img
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) // x, y, blur, color
+  border-radius: 50%
+
+a
+  display: inline-block
+  color: $blue
+  text-decoration: underline $blue
+  cursor: url('/src/assets/img/webp/hover.webp'), url('/src/assets/img/original/hover.png'), pointer
+  &.hover-interaction
+    text-decoration: none
+    &:hover
+      text-decoration: underline $blue
+
+.hide
+  display: none
