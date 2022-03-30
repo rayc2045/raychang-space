@@ -6,7 +6,7 @@ const containerEl = viewportEl.querySelector('.container');
 const contentEl = containerEl.querySelector('.markdown-html');
 const menuEl = document.querySelector('.menu');
 const isTouchDevice = 'ontouchstart' in document.documentElement;
-const pageAudio = new Audio('/src/assets/audio/page.mp3');
+const pageAudio = new Audio('/assets/audios/page.mp3');
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;

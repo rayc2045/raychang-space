@@ -36,9 +36,9 @@ let screenScale = 0;
 let time = new Date();
 let isValidated = false;
 
-// https://raw.githubusercontent.com/rayc2045/raychang-space/master/src/assets/audio/type.mp3
-const pagingSound = new Audio('/src/assets/audio/page.mp3');
-const typingSound = new Audio('/src/assets/audio/type.mp3');
+// https://raw.githubusercontent.com/rayc2045/raychang-space/master/assets/audios/type.mp3
+const pagingSound = new Audio('/assets/audios/page.mp3');
+const typingSound = new Audio('/assets/audios/type.mp3');
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////  Events  ///////////////////////////////
@@ -222,9 +222,9 @@ async function updateWorks() {
       <li class="work">
         <a href="${work.link}" target="_blank" rel="noreferrer noopener">
           <picture>
-            <source srcset="${`/src/assets/img/webp/${work.title.replaceAll(' ', '_')}.webp`}" type="image/webp">
-            <source srcset="${`/src/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" type="image/png">
-            <img src="${`/src/assets/img/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" width="400" height="300" loading="lazy">
+            <source srcset="${`/assets/images/webp/${work.title.replaceAll(' ', '_')}.webp`}" type="image/webp">
+            <source srcset="${`/assets/images/original/${work.title.replaceAll(' ', '_')}.png`}" type="image/png">
+            <img src="${`/assets/images/original/${work.title.replaceAll(' ', '_')}.png`}" alt="${work.title}" width="400" height="300" loading="lazy">
           </picture>
         </a>
         <section>
