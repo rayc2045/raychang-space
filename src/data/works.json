@@ -28,25 +28,25 @@
     "link": "https://vuejs-theater.netlify.app/"
   },
   {
-    "title": "Block Memory Game",
-    "subtitle": "How many levels can you accomplish?",
-    "repo": "block-memory-game",
+    "title": "Ghibli Gallery",
+    "subtitle": "Redesign studio Ghibli's work album",
+    "repo": "ghibli-gallery",
     "align": "justify",
-    "link": "https://rayc2045.github.io/block-memory-game/"
+    "link": "https://ghibli-gallery.netlify.app/"
   },
   {
     "title": "Vanilla Calculator",
     "subtitle": "Elegantly shows the result immediately",
     "repo": "vanilla-calculator",
     "align": "justify",
-    "link": "https://rayc2045.github.io/vanilla-calculator/"
+    "link": "https://github.com/rayc2045/vanilla-calculator/"
   },
   {
     "title": "Draggable To-do List",
     "subtitle": "Featured by autosave and markdown support",
     "repo": "draggable-todoList",
     "align": "justify",
-    "link": "https://rayc2045.github.io/draggable-todoList/"
+    "link": "https://github.com/rayc2045/draggable-todoList/"
   },
   {
     "title": "Dribbble Works",
