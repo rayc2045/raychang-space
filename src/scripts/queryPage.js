@@ -113,7 +113,9 @@ async function renderGithubPage(paramsObj) {
 
   const markdownFile = `https://raw.githubusercontent.com/${author}/${repo}/${branch}${path}/${md}.md`;
   await renderContent(markdownFile, align);
+
   const title = contentEl.querySelector('h1').textContent;
+  if (!title) return;
   updateSiteTitle(title);
   appendGithubLink(title, author, repo);
 }
