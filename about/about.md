@@ -16,12 +16,12 @@
 ### 技能與開發成就 SKILLS & ACHIEVEMENTS
 - 具備專業級別的圖像處理能力，如修圖、去背、調色、批次處理、保持圖像清晰的壓縮優化，甚至使用 Machine Learning 提高圖像解析度都不是問題。
 - 具備 UI/UX 設計概念，親手設計與實作個人網站、[色彩檢索網站 (HTML Reserved Colors](https://color-names.netlify.app/?colors=))。
-- 開發上做到 Pixel Perfect，甚至是在任何尺寸的裝置上，保持 [一致絕佳比例的響應式設計](https://color-names.netlify.app/)。
+- 開發上做到 Pixel Perfect，甚至是在任何尺寸的裝置上，保持一致絕佳比例的響應式設計。
 - 善用 CSS 預處理器 Sass，以及懂得使用 Tailwind 加速介面開發。
 - 熟悉 JavaScript ES6，能夠撰寫清楚明瞭、容易維護的程式碼。
-- 懂得 API 串接與 Git 版本控制，以及使用 Vite/Vue CLI 進行專案開發和打包。
-- 懂得網站優化，例如在個人網站中使用 WebP/WebM 格式呈現網站資源，並搭配 Lazy loading 延遲載入等技術，減少 82% 檔案加載大小，提升網頁載入效率達到 2.85 倍。
-- 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由，以及使用 Vuex 管理資料狀態。
+- 懂得 API 串接與 Git 版本控制，以及使用 NPM 進行專案開發和打包。
+- 懂得網站優化，例如在網站中使用 WebP/WebM 格式呈現檔案資源，並搭配壓縮工具和延遲載入技術，減少 80% 以上檔案加載大小，大幅提升網頁載入效率。
+- 喜歡 Vue 的設計理念與開發方式，了解如何使用 Vue 開發 SPA 單頁式網站、Vue Router 達成前端路由、Vuex 管理資料狀態，以及搭配框架 Astro 開發 SSG 增強型靜態網站。
 
 <!-- ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rayc2045&hide=html&width=370) -->
 
