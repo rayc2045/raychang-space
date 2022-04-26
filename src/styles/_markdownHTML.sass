@@ -21,8 +21,16 @@
       filter: brightness(0.9)
     a
       text-decoration: none
+      background-image: linear-gradient($blue)
+      // background-image: linear-gradient(90deg, crimson, royalblue)
+      background-size: 0% .12rem
+      background-repeat: no-repeat
+      background-position: right bottom
+      transition: background-size .3s ease
     a:hover
-      text-decoration: underline
+      // text-decoration: underline
+      background-size: 100% .12rem
+      background-position: left bottom
   picture, img
     pointer-events: none
   img
