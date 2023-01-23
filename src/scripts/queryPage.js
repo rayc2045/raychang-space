@@ -116,8 +116,8 @@ async function renderGithubPage(paramsObj) {
 
   const titleEl = contentEl.querySelector('h1');
   if (!titleEl) return;
-  updateSiteTitle(title.textContent);
-  appendGithubLink(title.textContent, author, repo);
+  updateSiteTitle(titleEl.textContent);
+  appendGithubLink(titleEl.textContent, author, repo);
 }
 
 async function renderMarkdownPage(path, paramsObj) {
